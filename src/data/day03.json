@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day03",
+  "day": 3,
+  "title": "借方・貸方を使って記録する",
+  "category": "仕訳",
+  "goals": [
+    "科目の分類と増減から借方・貸方を選ぶ。",
+    "複合仕訳でも科目・側・金額を確かめる。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day03-s1",
+      "title": "借方は左、貸方は右",
+      "paragraphs": [
+        "借方・貸方は仕訳の左・右を表す名前です。資産と費用は増加を借方へ、負債・純資産・収益は増加を貸方へ記録します。減少は逆側です。借りる・貸すという日常語の印象では判断しません。"
+      ],
+      "keyPoint": "借方は左、貸方は右。資産・費用の増加は左、負債・純資産・収益の増加は右です。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day03-s2",
+      "title": "複数の科目を一つに記す",
+      "paragraphs": [
+        "現金と掛けを組み合わせる取引は、片側に複数の科目を記します。借方合計と貸方合計を合わせたうえで、正しい科目と金額かも確かめます。本アプリは同じ側の同じ科目を1行にまとめ、行の順番は変えても採点結果が同じです。"
+      ],
+      "keyPoint": "複合仕訳は片側に複数の科目を使います。合計だけでなく、科目・側・金額も確かめます。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day03-q01",
+      "sectionId": "boki26-day03-s1",
+      "category": "仕訳",
+      "prompt": "普通預金20,000円を引き出し、現金にした。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 20000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 20000
+        }
+      ],
+      "explanation": "現金が増えるので借方、普通預金が減るので貸方です。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計20,000−貸方合計20,000＝0",
+          "operator": "difference",
+          "operands": [
+            20000,
+            20000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q02",
+      "sectionId": "boki26-day03-s1",
+      "category": "仕訳",
+      "prompt": "家賃12,000円を現金で支払った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "rent",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 12000
+        }
+      ],
+      "explanation": "費用の増加は借方、現金の減少は貸方です。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計12,000−貸方合計12,000＝0",
+          "operator": "difference",
+          "operands": [
+            12000,
+            12000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q03",
+      "sectionId": "boki26-day03-s1",
+      "category": "仕訳",
+      "prompt": "銀行から50,000円を借り入れ、普通預金へ入金された。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 50000
+        },
+        {
+          "side": "credit",
+          "accountId": "loanPayable",
+          "amount": 50000
+        }
+      ],
+      "explanation": "預金と返済義務が同額増えます。売上ではありません。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計50,000−貸方合計50,000＝0",
+          "operator": "difference",
+          "operands": [
+            50000,
+            50000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q04",
+      "sectionId": "boki26-day03-s2",
+      "category": "仕訳",
+      "prompt": "商品30,000円を販売し、現金10,000円を受け取り、残りは掛けとした。三分法で仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 10000
+        },
+        {
+          "side": "debit",
+          "accountId": "receivable",
+          "amount": 20000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 30000
+        }
+      ],
+      "explanation": "受取方法を現金と売掛金に分けます。借方の並びは採点に影響しません。",
+      "calculations": [
+        {
+          "expression": "10000 + 20000 = 30000",
+          "operator": "sum",
+          "operands": [
+            10000,
+            20000
+          ],
+          "result": 30000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計30,000−貸方合計30,000＝0",
+          "operator": "difference",
+          "operands": [
+            30000,
+            30000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q05",
+      "sectionId": "boki26-day03-s2",
+      "category": "仕訳",
+      "prompt": "商品24,000円を仕入れ、現金4,000円を支払い、残りは掛けとした。三分法で仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 24000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 4000
+        },
+        {
+          "side": "credit",
+          "accountId": "payable",
+          "amount": 20000
+        }
+      ],
+      "explanation": "仕入の増加を借方へ、現金の減少と買掛金の増加を貸方へ記します。",
+      "calculations": [
+        {
+          "expression": "4000 + 20000 = 24000",
+          "operator": "sum",
+          "operands": [
+            4000,
+            20000
+          ],
+          "result": 24000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計24,000−貸方合計24,000＝0",
+          "operator": "difference",
+          "operands": [
+            24000,
+            24000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q06",
+      "sectionId": "boki26-day03-s2",
+      "category": "仕訳",
+      "prompt": "借方に現金15,000円と売掛金9,000円。貸方は売上のみ。売上の金額を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "両側の合計は24,000円。ただし合計だけでは正しい仕訳か判断できません。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "売上",
+          "expected": 24000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "15,000＋9,000＝24,000",
+          "operator": "sum",
+          "operands": [
+            15000,
+            9000
+          ],
+          "result": 24000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day03-q07",
+      "sectionId": "boki26-day03-s1",
+      "category": "仕訳",
+      "prompt": "売掛金が増える場合、基本となる記入側はどちらですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "借方（左側）"
+        },
+        {
+          "id": "c2",
+          "text": "貸方（右側）"
+        },
+        {
+          "id": "c3",
+          "text": "左右両方に同額で必ず記入"
+        },
+        {
+          "id": "c4",
+          "text": "金額を記入しない"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "売掛金は資産で、増加は借方です。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day03-q08",
+      "sectionId": "boki26-day03-s2",
+      "category": "仕訳",
+      "prompt": "貸借合計が一致した仕訳の確認として適切なものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "一致したら科目は何でもよい。"
+        },
+        {
+          "id": "c2",
+          "text": "取引内容に合う科目と増減の側も確かめる。"
+        },
+        {
+          "id": "c3",
+          "text": "貸方がすべて現金なら必ず正しい。"
+        },
+        {
+          "id": "c4",
+          "text": "借方が費用だけなら必ず正しい。"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "借入金を売上としても合計は合うため、内容の検証が必要です。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

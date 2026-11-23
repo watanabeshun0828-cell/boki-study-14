@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day04",
+  "day": 4,
+  "title": "現金・預金と差額の調査",
+  "category": "現金預金",
+  "goals": [
+    "現金と預金の増減を、受け渡しの両側から記録する。",
+    "差額の認識、原因判明、決算の処理を分ける。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day04-s1",
+      "title": "手元と口座を分ける",
+      "paragraphs": [
+        "現金、普通預金、当座預金は別の科目で管理します。口座からの引出しや口座間の移動は、持つ資産の内訳が変わる取引です。小口現金は少額支払いのための現金で、担当者の支払報告と補給を区別して記録します。"
+      ],
+      "keyPoint": "預金から現金への移動は資産の内訳の変化です。それだけでは売上や費用は生じません。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day04-s2",
+      "title": "現金過不足は途中の科目",
+      "paragraphs": [
+        "帳簿の現金と実際の現金が違うとき、原因が不明なら現金過不足を使って実際の残高へ合わせます。その後、記帳漏れなどが判明したら適切な科目へ振り替えます。決算まで不明の残額は、この教材では雑損または雑益にします。"
+      ],
+      "keyPoint": "差額を認識して現金を修正済みなら、原因判明時に現金を二重に動かしません。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day04-q01",
+      "sectionId": "boki26-day04-s1",
+      "category": "現金預金",
+      "prompt": "現金15,000円を普通預金へ預け入れた。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 15000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 15000
+        }
+      ],
+      "explanation": "普通預金が増え、手元の現金が減ります。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計15,000−貸方合計15,000＝0",
+          "operator": "difference",
+          "operands": [
+            15000,
+            15000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q02",
+      "sectionId": "boki26-day04-s2",
+      "category": "現金預金",
+      "prompt": "帳簿の現金は31,000円、実際は29,500円だった。原因は不明。差額を記録しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cashOverShort",
+          "amount": 1500
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 1500
+        }
+      ],
+      "explanation": "実際の現金が1,500円少ないため、現金を減らし差額を仮に記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計1,500−貸方合計1,500＝0",
+          "operator": "difference",
+          "operands": [
+            1500,
+            1500
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q03",
+      "sectionId": "boki26-day04-s2",
+      "category": "現金預金",
+      "prompt": "借方に記録した現金過不足1,500円は、通信費の記入漏れと判明した。振替の仕訳をしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "communication",
+          "amount": 1500
+        },
+        {
+          "side": "credit",
+          "accountId": "cashOverShort",
+          "amount": 1500
+        }
+      ],
+      "explanation": "新しく現金を減らさず、仮の差額を正しい費用へ振り替えます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計1,500−貸方合計1,500＝0",
+          "operator": "difference",
+          "operands": [
+            1500,
+            1500
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q04",
+      "sectionId": "boki26-day04-s2",
+      "category": "現金預金",
+      "prompt": "決算日に現金過不足の貸方残高800円の原因が不明だった。本問では雑益へ振り替える。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cashOverShort",
+          "amount": 800
+        },
+        {
+          "side": "credit",
+          "accountId": "miscIncome",
+          "amount": 800
+        }
+      ],
+      "explanation": "貸方の差額を借方で取り消し、雑益を貸方に記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計800−貸方合計800＝0",
+          "operator": "difference",
+          "operands": [
+            800,
+            800
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q05",
+      "sectionId": "boki26-day04-s1",
+      "category": "現金預金",
+      "prompt": "小口現金の担当から、旅費交通費2,000円、通信費1,000円の支払報告があった。補給前の報告時の仕訳をしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "travel",
+          "amount": 2000
+        },
+        {
+          "side": "debit",
+          "accountId": "communication",
+          "amount": 1000
+        },
+        {
+          "side": "credit",
+          "accountId": "pettyCash",
+          "amount": 3000
+        }
+      ],
+      "explanation": "報告された費用と、小口現金の減少を記します。補給は別の取引です。",
+      "calculations": [
+        {
+          "expression": "2000 + 1000 = 3000",
+          "operator": "sum",
+          "operands": [
+            2000,
+            1000
+          ],
+          "result": 3000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計3,000−貸方合計3,000＝0",
+          "operator": "difference",
+          "operands": [
+            3000,
+            3000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q06",
+      "sectionId": "boki26-day04-s1",
+      "category": "現金預金",
+      "prompt": "現金の期首残高20,000円、受入れ13,000円、支払い8,000円。現金残高を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "期首残高に受入れを足し、支払いを引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "現金残高",
+          "expected": 25000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "20,000＋13,000−8,000＝25,000",
+          "operator": "difference",
+          "operands": [
+            33000,
+            8000
+          ],
+          "result": 25000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day04-q07",
+      "sectionId": "boki26-day04-s2",
+      "category": "現金預金",
+      "prompt": "不足の原因が判明したときの注意として正しいものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "原因判明時にも必ず現金を同額減らす。"
+        },
+        {
+          "id": "c2",
+          "text": "費用を使わず必ず売上にする。"
+        },
+        {
+          "id": "c3",
+          "text": "すでに減らした現金を二重に減らさない。"
+        },
+        {
+          "id": "c4",
+          "text": "調査記録をすべて消す。"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "差額認識時の仕訳を踏まえ、現金過不足から正しい科目へ振り替えます。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day04-q08",
+      "sectionId": "boki26-day04-s1",
+      "category": "現金預金",
+      "prompt": "普通預金から現金への引出しは、利益にどう影響しますか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "引出額だけ利益が増える。"
+        },
+        {
+          "id": "c2",
+          "text": "引出額だけ売上原価が増える。"
+        },
+        {
+          "id": "c3",
+          "text": "必ず法人税等が増える。"
+        },
+        {
+          "id": "c4",
+          "text": "この取引だけでは利益は変わらない。"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "資産の内訳の移動で、収益や費用は生じていません。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

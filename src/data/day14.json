@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day14",
+  "day": 14,
+  "title": "誤りを直して総復習",
+  "category": "総復習",
+  "goals": [
+    "誤った仕訳と、あるべき仕訳の差を記録する。",
+    "既に記録した権利・義務と、当日の新しい費用を分ける。",
+    "既存残高と対象期間を確認して追加額を計算する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day14-s1",
+      "title": "差額と科目の両方を見る",
+      "paragraphs": [
+        "訂正は、誤った記録が何かを確かめてから行います。同額の科目違いは振替で直せる場合があり、金額不足は不足分を追加します。丸ごと二重なら逆仕訳です。合計が合っていることを、正しい内容の保証にしません。"
+      ],
+      "keyPoint": "貸借が合っていても科目違いは残ります。訂正前の仕訳を確認して、直す差額だけを記録します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day14-s2",
+      "title": "回収・前受け・返済",
+      "paragraphs": [
+        "クレジット売掛金は、設例が指定する手数料の計上時点を確認します。すでに手数料を記録したなら、入金時にもう一度費用にしません。前受金の充当や元本と利息を同時に支払う場合は、一つの取引でも複数科目へ分けます。"
+      ],
+      "keyPoint": "記録済みの権利・義務を消す部分と、新しい費用を分けます。手数料や利息を二重計上しません。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day14-s3",
+      "title": "決算整理をもう一度",
+      "paragraphs": [
+        "貸倒れが実際に起きたときは、既存の貸倒引当金で補う部分と不足分を分ける設例を扱います。法人税等の額は設問で与え、中間納付の仮払法人税等と差し引いて未払いを残します。前受家賃や商品の原価も、対象期間と残高を確かめます。",
+        "商品の移動平均法は、仕入れのたびに、その時点の在庫原価合計を在庫個数で割り直す方法です。例えば10個を単価200円、次の10個を単価300円で仕入れたら、合計5,000円÷20個＝平均単価250円です。その後12個売ると、残り8個の原価は250円×8個＝2,000円です。端数が出る設例では指示に従います。"
+      ],
+      "keyPoint": "期間・残高・指定した率を確認します。移動平均法では仕入れのたびに在庫の平均単価を計算し直します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day14-s4",
+      "title": "できたことを確かめる",
+      "paragraphs": [
+        "最後は図解の決算書へ戻り、資産と負債・純資産の合計、利益と純資産の増加を照合しましょう。分からなかった問題は復習から何度でも解き直せます。14日は学習を分ける単位で、合格や仕事の受注を保証する日数ではありません。"
+      ],
+      "keyPoint": "資産＝負債＋純資産を確認し、増資・配当などがなければ純資産の増加と利益が一致するか検算します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day14-q01",
+      "sectionId": "boki26-day14-s1",
+      "category": "総復習",
+      "prompt": "家賃4,000円の現金払いを、通信費4,000円として記録していた。現金は直さず、振替で訂正しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "rent",
+          "amount": 4000
+        },
+        {
+          "side": "credit",
+          "accountId": "communication",
+          "amount": 4000
+        }
+      ],
+      "explanation": "誤った費用を減らし、正しい費用へ置き換えます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計4,000−貸方合計4,000＝0",
+          "operator": "difference",
+          "operands": [
+            4000,
+            4000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q02",
+      "sectionId": "boki26-day14-s1",
+      "category": "総復習",
+      "prompt": "商品を現金で3,300円仕入れたが、仕入3,000円／現金3,000円と記録した。不足分だけ追加しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 300
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 300
+        }
+      ],
+      "explanation": "3,300−3,000＝300円を両側へ追加します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計300−貸方合計300＝0",
+          "operator": "difference",
+          "operands": [
+            300,
+            300
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q03",
+      "sectionId": "boki26-day14-s1",
+      "category": "総復習",
+      "prompt": "現金不足900円を借方の現金過不足に記録済み。保険料の支払記入漏れと判明した。振替で訂正しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "insurance",
+          "amount": 900
+        },
+        {
+          "side": "credit",
+          "accountId": "cashOverShort",
+          "amount": 900
+        }
+      ],
+      "explanation": "現金の減少は記録済みなので、現金過不足から費用へ移します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計900−貸方合計900＝0",
+          "operator": "difference",
+          "operands": [
+            900,
+            900
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q04",
+      "sectionId": "boki26-day14-s2",
+      "category": "総復習",
+      "prompt": "商品12,000円をカードで販売した。販売時に手数料360円を差し引いたクレジット売掛金を計上する条件。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cardReceivable",
+          "amount": 11640
+        },
+        {
+          "side": "debit",
+          "accountId": "fees",
+          "amount": 360
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 12000
+        }
+      ],
+      "explanation": "将来の受取額と手数料を分け、売上は12,000円で記録します。",
+      "calculations": [
+        {
+          "expression": "11640 + 360 = 12000",
+          "operator": "sum",
+          "operands": [
+            11640,
+            360
+          ],
+          "result": 12000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計12,000−貸方合計12,000＝0",
+          "operator": "difference",
+          "operands": [
+            12000,
+            12000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q05",
+      "sectionId": "boki26-day14-s2",
+      "category": "総復習",
+      "prompt": "前問とは独立の取引。手数料控除後のクレジット売掛金11,640円が普通預金へ全額入金された。手数料は記録済み。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 11640
+        },
+        {
+          "side": "credit",
+          "accountId": "cardReceivable",
+          "amount": 11640
+        }
+      ],
+      "explanation": "手数料を二重に費用へ記録しません。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計11,640−貸方合計11,640＝0",
+          "operator": "difference",
+          "operands": [
+            11640,
+            11640
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q06",
+      "sectionId": "boki26-day14-s2",
+      "category": "総復習",
+      "prompt": "借入金の元本20,000円と利息400円を普通預金から同時に払った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "loanPayable",
+          "amount": 20000
+        },
+        {
+          "side": "debit",
+          "accountId": "interestExpense",
+          "amount": 400
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 20400
+        }
+      ],
+      "explanation": "元本は負債の減少、利息は当期費用です。",
+      "calculations": [
+        {
+          "expression": "20000 + 400 = 20400",
+          "operator": "sum",
+          "operands": [
+            20000,
+            400
+          ],
+          "result": 20400,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計20,400−貸方合計20,400＝0",
+          "operator": "difference",
+          "operands": [
+            20400,
+            20400
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q07",
+      "sectionId": "boki26-day14-s2",
+      "category": "総復習",
+      "prompt": "商品30,000円を渡し、記録済みの前受金8,000円を充当、残り22,000円を現金で受け取った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "advanceReceived",
+          "amount": 8000
+        },
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 22000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 30000
+        }
+      ],
+      "explanation": "前受金を消し、当日の現金と合わせて売上を記録します。",
+      "calculations": [
+        {
+          "expression": "8000 + 22000 = 30000",
+          "operator": "sum",
+          "operands": [
+            8000,
+            22000
+          ],
+          "result": 30000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計30,000−貸方合計30,000＝0",
+          "operator": "difference",
+          "operands": [
+            30000,
+            30000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q08",
+      "sectionId": "boki26-day14-s3",
+      "category": "総復習",
+      "prompt": "決算で法人税等18,000円が確定したという仮定。仮払法人税等の残高7,000円を充当し、残りを未払法人税等にする。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "corporateTax",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "prepaidTax",
+          "amount": 7000
+        },
+        {
+          "side": "credit",
+          "accountId": "taxPayable",
+          "amount": 11000
+        }
+      ],
+      "explanation": "税額は設例で与えています。18,000−7,000＝11,000円が未払いです。",
+      "calculations": [
+        {
+          "expression": "7000 + 11000 = 18000",
+          "operator": "sum",
+          "operands": [
+            7000,
+            11000
+          ],
+          "result": 18000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計18,000−貸方合計18,000＝0",
+          "operator": "difference",
+          "operands": [
+            18000,
+            18000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q09",
+      "sectionId": "boki26-day14-s3",
+      "category": "総復習",
+      "prompt": "前期からの売掛金4,000円が回収不能となった。貸倒引当金の残高3,000円を充て、不足分は貸倒損失へ記録する条件。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "allowance",
+          "amount": 3000
+        },
+        {
+          "side": "debit",
+          "accountId": "badDebtLoss",
+          "amount": 1000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 4000
+        }
+      ],
+      "explanation": "引当金で3,000円を補い、残る1,000円を費用とします。",
+      "calculations": [
+        {
+          "expression": "3000 + 1000 = 4000",
+          "operator": "sum",
+          "operands": [
+            3000,
+            1000
+          ],
+          "result": 4000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計4,000−貸方合計4,000＝0",
+          "operator": "difference",
+          "operands": [
+            4000,
+            4000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q10",
+      "sectionId": "boki26-day14-s3",
+      "category": "総復習",
+      "prompt": "受取家賃に計上済みのうち、翌期のサービスに対応する6,000円を前受家賃へ振り替えましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "rentIncome",
+          "amount": 6000
+        },
+        {
+          "side": "credit",
+          "accountId": "deferredRent",
+          "amount": 6000
+        }
+      ],
+      "explanation": "翌期分を当期収益から除き、負債へ残します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計6,000−貸方合計6,000＝0",
+          "operator": "difference",
+          "operands": [
+            6000,
+            6000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q11",
+      "sectionId": "boki26-day14-s3",
+      "category": "総復習",
+      "prompt": "同種の商品を10個・単価200円、次に10個・単価300円で仕入れ、その後12個を販売した。移動平均法、端数なし。残る8個の原価を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "仕入後の平均単価250円で、残り8個を評価します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "期末商品原価",
+          "expected": 2000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "（2,000＋3,000）÷20＝単価250、250×8＝2,000",
+          "operator": "product",
+          "operands": [
+            8,
+            250
+          ],
+          "result": 2000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q12",
+      "sectionId": "boki26-day14-s3",
+      "category": "総復習",
+      "prompt": "備品の取得原価100,003円、残存0円、耐用年数3年、当期供用3か月。定額法、最後に1円未満を切り捨てる条件。償却額を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "途中では丸めず、計算の最後に指定どおり切り捨てます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "当期減価償却費",
+          "expected": 8333,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "（100,003−0）×3÷（3×12）＝8,333.583…→8,333",
+          "operator": "depreciation",
+          "operands": [
+            100003,
+            0,
+            3,
+            3
+          ],
+          "result": 8333,
+          "unit": "円",
+          "rounding": "1円未満切り捨て"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q13",
+      "sectionId": "boki26-day14-s4",
+      "category": "総復習",
+      "prompt": "総合設例の整理後費用は、原価75,000円、家賃18,000円、保険料6,000円、消耗品費6,000円、水道光熱費14,000円、手数料500円、償却費12,000円、引当金繰入1,200円。費用合計を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "図解の損益計算書の費用合計と一致します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "費用合計",
+          "expected": 132700,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "75,000＋18,000＋6,000＋6,000＋14,000＋500＋12,000＋1,200＝132,700",
+          "operator": "sum",
+          "operands": [
+            75000,
+            18000,
+            6000,
+            6000,
+            14000,
+            500,
+            12000,
+            1200
+          ],
+          "result": 132700,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q14",
+      "sectionId": "boki26-day14-s4",
+      "category": "総復習",
+      "prompt": "総合設例で資産399,300円、負債42,000円、期首純資産300,000円。増資・配当なし。期末純資産と、その増加額を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "当期利益57,300円と純資産の増加がつながります。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "期末純資産",
+          "expected": 357300,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "純資産の増加",
+          "expected": 57300,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "399,300−42,000＝357,300",
+          "operator": "difference",
+          "operands": [
+            399300,
+            42000
+          ],
+          "result": 357300,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "357,300−300,000＝57,300",
+          "operator": "difference",
+          "operands": [
+            357300,
+            300000
+          ],
+          "result": 57300,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day14-q15",
+      "sectionId": "boki26-day14-s1",
+      "category": "総復習",
+      "prompt": "貸借合計は一致するが、借入金を売上として記録していた。正しい判断はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "科目と内容が誤っており、訂正が必要。"
+        },
+        {
+          "id": "c2",
+          "text": "一致しているので必ず正しい。"
+        },
+        {
+          "id": "c3",
+          "text": "金額が大きければ正しい。"
+        },
+        {
+          "id": "c4",
+          "text": "入金ならすべて売上でよい。"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "試算表の一致だけでは科目の誤りを発見できません。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day14-q16",
+      "sectionId": "boki26-day14-s4",
+      "category": "総復習",
+      "prompt": "決算整理後の帳簿から財務諸表を作るとき、正しい組合せはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "すべての科目を現金残高だけにまとめる。"
+        },
+        {
+          "id": "c2",
+          "text": "資産・負債・純資産を貸借対照表へ、収益・費用を損益計算書へまとめる。"
+        },
+        {
+          "id": "c3",
+          "text": "資産と費用だけを貸借対照表へまとめる。"
+        },
+        {
+          "id": "c4",
+          "text": "利益を借入金へ振り替え、負債を増やす。"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "貸借対照表はある日現在の資産・負債・純資産、損益計算書は一定期間の収益・費用を示します。利益は純資産とのつながりも確認します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day08",
+  "day": 8,
+  "title": "固定資産と減価償却",
+  "category": "固定資産",
+  "goals": [
+    "使用目的と取得原価を確認する。",
+    "償却額、累計額、帳簿価額の関係を計算する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day08-s1",
+      "title": "使うために取得した資産",
+      "paragraphs": [
+        "長く使う机などは備品として記録し、買ったときに全額を当期費用としない設例を扱います。購入に直接必要な運送費などは、指定の条件に従って取得原価へ含めます。販売するための商品とは目的が違います。"
+      ],
+      "keyPoint": "定額法の償却額は（取得原価−残存価額）÷耐用年数×供用月数÷12。端数は設問の指定で処理します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day08-s2",
+      "title": "定額法と売却",
+      "paragraphs": [
+        "定額法では、取得原価から残存価額を引き、耐用年数で割って配分します。年の途中に使い始めるときは月数を確認します。間接法では備品そのものを減らさず、減価償却累計額を記録します。売却では帳簿価額との差額を損益にします。"
+      ],
+      "keyPoint": "備品の帳簿価額は取得原価−減価償却累計額。売却額との差が売却益または売却損です。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day08-q01",
+      "sectionId": "boki26-day08-s1",
+      "category": "固定資産",
+      "prompt": "備品の代金58,000円と購入時の運送費2,000円を普通預金から支払った。運送費は取得原価に含める仮定。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "equipment",
+          "amount": 60000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 60000
+        }
+      ],
+      "explanation": "直接必要な取得費用を含め、合計60,000円を備品とします。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計60,000−貸方合計60,000＝0",
+          "operator": "difference",
+          "operands": [
+            60000,
+            60000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q02",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "取得原価60,000円、残存価額0円、耐用年数5年の備品。定額法・間接法で12か月分の償却を記録しましょう。端数なし。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "depreciation",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "equipmentAccum",
+          "amount": 12000
+        }
+      ],
+      "explanation": "60,000÷5＝12,000円を費用にし、累計額を増やします。",
+      "calculations": [
+        {
+          "expression": "（60,000−0）×12÷（5×12）＝12,000",
+          "operator": "depreciation",
+          "operands": [
+            60000,
+            0,
+            5,
+            12
+          ],
+          "result": 12000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計12,000−貸方合計12,000＝0",
+          "operator": "difference",
+          "operands": [
+            12000,
+            12000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q03",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "取得原価120,000円、残存価額0円、耐用年数5年。10月1日に供用し12月31日決算。定額法・間接法で3か月分を記録しましょう。端数なし。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "depreciation",
+          "amount": 6000
+        },
+        {
+          "side": "credit",
+          "accountId": "equipmentAccum",
+          "amount": 6000
+        }
+      ],
+      "explanation": "120,000÷5×3/12＝6,000円です。",
+      "calculations": [
+        {
+          "expression": "（120,000−0）×3÷（5×12）＝6,000",
+          "operator": "depreciation",
+          "operands": [
+            120000,
+            0,
+            5,
+            3
+          ],
+          "result": 6000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計6,000−貸方合計6,000＝0",
+          "operator": "difference",
+          "operands": [
+            6000,
+            6000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q04",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "取得原価80,000円、減価償却累計額30,000円の備品を、期首に現金55,000円で売った。売却時に追加償却は不要。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 55000
+        },
+        {
+          "side": "debit",
+          "accountId": "equipmentAccum",
+          "amount": 30000
+        },
+        {
+          "side": "credit",
+          "accountId": "equipment",
+          "amount": 80000
+        },
+        {
+          "side": "credit",
+          "accountId": "disposalGain",
+          "amount": 5000
+        }
+      ],
+      "explanation": "帳簿価額50,000円に対して売却額55,000円なので売却益5,000円です。",
+      "calculations": [
+        {
+          "expression": "55000 + 30000 = 85000",
+          "operator": "sum",
+          "operands": [
+            55000,
+            30000
+          ],
+          "result": 85000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "80000 + 5000 = 85000",
+          "operator": "sum",
+          "operands": [
+            80000,
+            5000
+          ],
+          "result": 85000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "55,000−（80,000−30,000）＝5,000",
+          "operator": "difference",
+          "operands": [
+            55000,
+            80000,
+            -30000
+          ],
+          "result": 5000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計85,000−貸方合計85,000＝0",
+          "operator": "difference",
+          "operands": [
+            85000,
+            85000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q05",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "取得原価70,000円、減価償却累計額20,000円の備品を、期首に現金46,000円で売った。追加償却は不要。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 46000
+        },
+        {
+          "side": "debit",
+          "accountId": "equipmentAccum",
+          "amount": 20000
+        },
+        {
+          "side": "debit",
+          "accountId": "disposalLoss",
+          "amount": 4000
+        },
+        {
+          "side": "credit",
+          "accountId": "equipment",
+          "amount": 70000
+        }
+      ],
+      "explanation": "帳簿価額50,000円との差4,000円が売却損です。",
+      "calculations": [
+        {
+          "expression": "46000 + 20000 + 4000 = 70000",
+          "operator": "sum",
+          "operands": [
+            46000,
+            20000,
+            4000
+          ],
+          "result": 70000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計70,000−貸方合計70,000＝0",
+          "operator": "difference",
+          "operands": [
+            70000,
+            70000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q06",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "取得原価96,000円、減価償却累計額36,000円。帳簿価額を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "備品の取得原価から累計額を差し引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "帳簿価額",
+          "expected": 60000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "96,000−36,000＝60,000",
+          "operator": "difference",
+          "operands": [
+            96000,
+            36000
+          ],
+          "result": 60000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day08-q07",
+      "sectionId": "boki26-day08-s1",
+      "category": "固定資産",
+      "prompt": "販売用の商品と、会社で使用する備品の区別は何によりますか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "価格が高いかだけ"
+        },
+        {
+          "id": "c2",
+          "text": "買った曜日だけ"
+        },
+        {
+          "id": "c3",
+          "text": "保有する目的"
+        },
+        {
+          "id": "c4",
+          "text": "支払方法が現金かだけ"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "売るためか、長期に使うためかという目的で区別します。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day08-q08",
+      "sectionId": "boki26-day08-s2",
+      "category": "固定資産",
+      "prompt": "間接法の減価償却で貸方に使う科目はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "備品を必ず直接減らす。"
+        },
+        {
+          "id": "c2",
+          "text": "売上"
+        },
+        {
+          "id": "c3",
+          "text": "資本金"
+        },
+        {
+          "id": "c4",
+          "text": "備品減価償却累計額"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "減価償却費に対応して、累計額を別科目で記録します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

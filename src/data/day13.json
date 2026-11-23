@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day13",
+  "day": 13,
+  "title": "架空店舗の取引をつなぐ",
+  "category": "総合記帳",
+  "goals": [
+    "総合設例に含める取引と前提を特定する。",
+    "仕訳・残高・利益の検算を別々に行う。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day13-s1",
+      "title": "同じ会社の一年を追う",
+      "paragraphs": [
+        "総合設例は架空の株式会社こもれび文具です。設立時の資本金、商品売買、回収、支払い、備品の購入を日付順に追います。ここからは、設例に記載した取引だけがある条件です。単独問題の金額と合算しません。"
+      ],
+      "keyPoint": "総合設例に含む取引だけを集計します。別の単独練習の金額を足さないようにしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day13-s2",
+      "title": "図解と帳簿を往復する",
+      "paragraphs": [
+        "図解画面では、取引・仕訳・元帳・試算表・決算書を切り替えられます。元帳の金額は同じ仕訳データから集計しています。取引ごとに左右が等しいことと、元帳残高を集めた試算表の一致、利益と純資産の増加を別々に確かめます。"
+      ],
+      "keyPoint": "同じ仕訳から元帳と試算表を作り、貸借の一致と利益・純資産の増加をそれぞれ検算します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day13-q01",
+      "sectionId": "boki26-day13-s1",
+      "category": "総合記帳",
+      "prompt": "総合設例：設立時に資本金300,000円が普通預金へ払い込まれた。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 300000
+        },
+        {
+          "side": "credit",
+          "accountId": "capital",
+          "amount": 300000
+        }
+      ],
+      "explanation": "資産と、株主からの払込みによる純資産を記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計300,000−貸方合計300,000＝0",
+          "operator": "difference",
+          "operands": [
+            300000,
+            300000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day13-q02",
+      "sectionId": "boki26-day13-s1",
+      "category": "総合記帳",
+      "prompt": "総合設例：商品100,000円を掛けで仕入れた。三分法で記録しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 100000
+        },
+        {
+          "side": "credit",
+          "accountId": "payable",
+          "amount": 100000
+        }
+      ],
+      "explanation": "期中の仕入と買掛金を記します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計100,000−貸方合計100,000＝0",
+          "operator": "difference",
+          "operands": [
+            100000,
+            100000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day13-q03",
+      "sectionId": "boki26-day13-s1",
+      "category": "総合記帳",
+      "prompt": "総合設例：商品150,000円を掛けで販売した。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "receivable",
+          "amount": 150000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 150000
+        }
+      ],
+      "explanation": "まだ回収していなくても売上と売掛金を記します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計150,000−貸方合計150,000＝0",
+          "operator": "difference",
+          "operands": [
+            150000,
+            150000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ],
+      "document": {
+        "kind": "invoice",
+        "number": "KB-0004",
+        "date": "2026-01-04",
+        "issuer": "株式会社こもれび文具（架空）",
+        "recipient": "架空の取引先みどり店",
+        "description": "文具の掛け販売・本総合設例では税金を考慮しない",
+        "amount": 150000
+      }
+    },
+    {
+      "id": "boki26-day13-q04",
+      "sectionId": "boki26-day13-s1",
+      "category": "総合記帳",
+      "prompt": "総合設例：売掛金90,000円が普通預金へ入金された。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 90000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 90000
+        }
+      ],
+      "explanation": "売掛金は150,000−90,000＝60,000円へ減ります。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計90,000−貸方合計90,000＝0",
+          "operator": "difference",
+          "operands": [
+            90000,
+            90000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day13-q05",
+      "sectionId": "boki26-day13-s1",
+      "category": "総合記帳",
+      "prompt": "総合設例：買掛金60,000円を普通預金から支払った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 60000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 60000
+        }
+      ],
+      "explanation": "買掛金は100,000−60,000＝40,000円です。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計60,000−貸方合計60,000＝0",
+          "operator": "difference",
+          "operands": [
+            60000,
+            60000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day13-q06",
+      "sectionId": "boki26-day13-s2",
+      "category": "総合記帳",
+      "prompt": "総合設例：当期の家賃18,000円を普通預金から支払った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "rent",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 18000
+        }
+      ],
+      "explanation": "当期の費用を借方、預金の減少を貸方に記します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計18,000−貸方合計18,000＝0",
+          "operator": "difference",
+          "operands": [
+            18000,
+            18000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ],
+      "document": {
+        "kind": "receipt",
+        "number": "KR-0007",
+        "date": "2026-01-07",
+        "issuer": "架空の貸主こもれび建物",
+        "recipient": "株式会社こもれび文具（架空）",
+        "description": "当期家賃の受領・税金は考慮しない",
+        "amount": 18000
+      }
+    },
+    {
+      "id": "boki26-day13-q07",
+      "sectionId": "boki26-day13-s2",
+      "category": "総合記帳",
+      "prompt": "総合設例の決算整理前。普通預金の入金は300,000円と90,000円。出金は50,000円、60,000円、18,000円、60,000円、24,000円、12,000円、500円だけ。預金残高を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "図解の普通預金元帳と一致する金額です。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "普通預金残高",
+          "expected": 165500,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "390,000−50,000−60,000−18,000−60,000−24,000−12,000−500＝165,500",
+          "operator": "difference",
+          "operands": [
+            390000,
+            50000,
+            60000,
+            18000,
+            60000,
+            24000,
+            12000,
+            500
+          ],
+          "result": 165500,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day13-q08",
+      "sectionId": "boki26-day13-s2",
+      "category": "総合記帳",
+      "prompt": "総合設例の決算整理前。現金の受入れは引出し50,000円と現金売上40,000円、支払いは消耗品9,000円だけ。現金残高を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "図解の現金元帳へ戻り、受入れと支払いを確認できます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "現金残高",
+          "expected": 81000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "50,000＋40,000−9,000＝81,000",
+          "operator": "difference",
+          "operands": [
+            90000,
+            9000
+          ],
+          "result": 81000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

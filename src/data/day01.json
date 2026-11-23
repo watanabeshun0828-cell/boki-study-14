@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day01",
+  "day": 1,
+  "title": "財産と借金を見える形にする",
+  "category": "簿記の土台",
+  "goals": [
+    "資産−負債＝純資産の関係を説明する。",
+    "貸借対照表の左右がなぜ同じになるかを捉える。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day01-s1",
+      "title": "資産・負債・純資産",
+      "paragraphs": [
+        "資産は、会社が持つ現金や商品、後で代金を受け取る権利などです。負債は、借入金や買掛金のように、後で支払う義務です。資産から負債を引いた部分を純資産といいます。手元のお金が多くても、同じだけ借金がある場合は分けて考えます。"
+      ],
+      "keyPoint": "資産−負債＝純資産。借入金は返す義務なので、手元の資産と分けて記録します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day01-s2",
+      "title": "貸借対照表はある日の姿",
+      "paragraphs": [
+        "貸借対照表は、ある日現在の資産と、負債・純資産を並べた表です。資産＝負債＋純資産になることを確認します。借り入れで現金が増えても、それだけでは利益は増えません。会社と経営者個人のお金を分けて記録します。"
+      ],
+      "keyPoint": "貸借対照表は「ある日」の姿。資産＝負債＋純資産となり、借入れだけでは利益は増えません。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ],
+      "diagram": {
+        "title": "財産の使い道と調達元",
+        "description": "左の資産を、右の負債と純資産の合計で支えます。いずれも同じ日の金額です。",
+        "items": [
+          {
+            "label": "資産",
+            "detail": "現金・預金・商品・売掛金など"
+          },
+          {
+            "label": "負債＋純資産",
+            "detail": "支払う義務と、差し引きの持分"
+          }
+        ]
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day01-q01",
+      "sectionId": "boki26-day01-s1",
+      "category": "簿記の土台",
+      "prompt": "現金80,000円、普通預金120,000円、借入金50,000円だけがある。資産合計を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "現金と預金が資産です。借入金は資産から直接引かず、負債として別に表示します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "資産合計",
+          "expected": 200000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "80,000＋120,000＝200,000",
+          "operator": "sum",
+          "operands": [
+            80000,
+            120000
+          ],
+          "result": 200000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q02",
+      "sectionId": "boki26-day01-s1",
+      "category": "簿記の土台",
+      "prompt": "資産200,000円、負債50,000円。純資産を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "資産から負債を差し引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "純資産",
+          "expected": 150000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "200,000−50,000＝150,000",
+          "operator": "difference",
+          "operands": [
+            200000,
+            50000
+          ],
+          "result": 150000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q03",
+      "sectionId": "boki26-day01-s2",
+      "category": "簿記の土台",
+      "prompt": "資産360,000円、純資産240,000円。負債を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "資産＝負債＋純資産の関係を使います。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "負債",
+          "expected": 120000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "360,000−240,000＝120,000",
+          "operator": "difference",
+          "operands": [
+            360000,
+            240000
+          ],
+          "result": 120000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q04",
+      "sectionId": "boki26-day01-s2",
+      "category": "簿記の土台",
+      "prompt": "資産300,000円、負債80,000円の会社が、現金40,000円を新たに借りた。借入後の資産と負債を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "借入れで資産と負債が同額増え、純資産220,000円は変わりません。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "借入後の資産",
+          "expected": 340000,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "借入後の負債",
+          "expected": 120000,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "300,000＋40,000＝340,000",
+          "operator": "sum",
+          "operands": [
+            300000,
+            40000
+          ],
+          "result": 340000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "80,000＋40,000＝120,000",
+          "operator": "sum",
+          "operands": [
+            80000,
+            40000
+          ],
+          "result": 120000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q05",
+      "sectionId": "boki26-day01-s2",
+      "category": "簿記の土台",
+      "prompt": "資産500,000円、負債150,000円。現金30,000円で借入金を返した。返済後の純資産を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "資産と負債が同額減るので、差額の純資産は変わりません。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "返済後の純資産",
+          "expected": 350000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "（500,000−30,000）−（150,000−30,000）＝350,000",
+          "operator": "difference",
+          "operands": [
+            500000,
+            30000,
+            150000,
+            -30000
+          ],
+          "result": 350000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q06",
+      "sectionId": "boki26-day01-s1",
+      "category": "簿記の土台",
+      "prompt": "現金45,000円、商品25,000円、売掛金30,000円、買掛金20,000円だけがある。純資産を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "資産合計100,000円から買掛金20,000円を引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "純資産",
+          "expected": 80000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "（45,000＋25,000＋30,000）−20,000＝80,000",
+          "operator": "difference",
+          "operands": [
+            100000,
+            20000
+          ],
+          "result": 80000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day01-q07",
+      "sectionId": "boki26-day01-s1",
+      "category": "簿記の土台",
+      "prompt": "商品を売り、代金を翌月受け取る権利はどの分類ですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "資産"
+        },
+        {
+          "id": "c2",
+          "text": "負債"
+        },
+        {
+          "id": "c3",
+          "text": "費用"
+        },
+        {
+          "id": "c4",
+          "text": "純資産への出資"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "売掛金という資産です。入金前でも受け取る権利があります。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day01-q08",
+      "sectionId": "boki26-day01-s2",
+      "category": "簿記の土台",
+      "prompt": "銀行からの借入れで預金が増えた。正しい説明はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "売上が必ず増える。"
+        },
+        {
+          "id": "c2",
+          "text": "資産と負債が同額増える。"
+        },
+        {
+          "id": "c3",
+          "text": "費用だけが増える。"
+        },
+        {
+          "id": "c4",
+          "text": "純資産だけが増える。"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "借入れは返済義務も生むため、受け取った額を売上にはしません。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

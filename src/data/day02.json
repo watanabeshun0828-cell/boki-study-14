@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day02",
+  "day": 2,
+  "title": "もうけを期間で捉える",
+  "category": "簿記の土台",
+  "goals": [
+    "収益−費用＝利益を計算する。",
+    "利益と現金、純資産の増減を区別する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day02-s1",
+      "title": "収益と費用",
+      "paragraphs": [
+        "収益は商品の販売やサービスの提供などによる成果、費用はその期間の成果を得るための支出や資源の消費です。収益から費用を引いた差額が利益です。お金が入った理由が借入れなのか売上なのかを区別します。"
+      ],
+      "keyPoint": "利益＝収益−費用。入金した理由が売上か借入れかで、利益への影響は違います。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day02-s2",
+      "title": "損益と純資産のつながり",
+      "paragraphs": [
+        "損益計算書は一定期間の収益と費用をまとめます。売上が立っていても代金が未回収の場合があり、利益と現金の増減は一致するとは限りません。増資や配当などがなければ、利益だけ純資産が増えます。本教材の総合設例はこの条件で検算します。"
+      ],
+      "keyPoint": "利益と現金の増減は別です。増資・配当などがない条件では、利益だけ純資産が増えます。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day02-q01",
+      "sectionId": "boki26-day02-s1",
+      "category": "簿記の土台",
+      "prompt": "収益90,000円、費用54,000円。利益を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "一定期間の収益から費用を引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "利益",
+          "expected": 36000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "90,000−54,000＝36,000",
+          "operator": "difference",
+          "operands": [
+            90000,
+            54000
+          ],
+          "result": 36000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q02",
+      "sectionId": "boki26-day02-s1",
+      "category": "簿記の土台",
+      "prompt": "売上120,000円、売上原価70,000円、家賃20,000円、通信費3,000円。他の収益・費用はない。利益を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "商品の原価とその他の費用を差し引きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "利益",
+          "expected": 27000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "120,000−70,000−20,000−3,000＝27,000",
+          "operator": "difference",
+          "operands": [
+            120000,
+            70000,
+            20000,
+            3000
+          ],
+          "result": 27000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q03",
+      "sectionId": "boki26-day02-s2",
+      "category": "簿記の土台",
+      "prompt": "期首純資産180,000円、当期利益25,000円。増資・配当などはない。期末純資産を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "利益が会社に残る分だけ純資産が増えます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "期末純資産",
+          "expected": 205000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "180,000＋25,000＝205,000",
+          "operator": "sum",
+          "operands": [
+            180000,
+            25000
+          ],
+          "result": 205000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q04",
+      "sectionId": "boki26-day02-s2",
+      "category": "簿記の土台",
+      "prompt": "期首純資産200,000円、期末純資産191,000円。増資・配当などはない。当期損失の金額を正の値で求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "純資産の減少9,000円が、この条件では損失です。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "当期損失",
+          "expected": 9000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "200,000−191,000＝9,000",
+          "operator": "difference",
+          "operands": [
+            200000,
+            191000
+          ],
+          "result": 9000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q05",
+      "sectionId": "boki26-day02-s1",
+      "category": "簿記の土台",
+      "prompt": "収益84,000円、費用91,000円。当期の利益を求めましょう。損失はマイナスで入力します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "費用が収益より7,000円多いので損失です。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "当期利益（損失は負）",
+          "expected": -7000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "84,000−91,000＝−7,000",
+          "operator": "difference",
+          "operands": [
+            84000,
+            91000
+          ],
+          "result": -7000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q06",
+      "sectionId": "boki26-day02-s2",
+      "category": "簿記の土台",
+      "prompt": "期首の現金100,000円。現金で売上40,000円、家賃15,000円の支払い、借入金10,000円の返済だけがあった。現金残高と利益を求めましょう。商品原価は考えない。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "借入金元本の返済は費用ではないため、現金の増加15,000円と利益25,000円は異なります。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "現金残高",
+          "expected": 115000,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "利益",
+          "expected": 25000,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "100,000＋40,000−15,000−10,000＝115,000",
+          "operator": "difference",
+          "operands": [
+            140000,
+            15000,
+            10000
+          ],
+          "result": 115000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "40,000−15,000＝25,000",
+          "operator": "difference",
+          "operands": [
+            40000,
+            15000
+          ],
+          "result": 25000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day02-q07",
+      "sectionId": "boki26-day02-s1",
+      "category": "簿記の土台",
+      "prompt": "銀行借入金の元本返済について正しい説明はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "全額を売上にする。"
+        },
+        {
+          "id": "c2",
+          "text": "必ず利益を増やす。"
+        },
+        {
+          "id": "c3",
+          "text": "負債を減らす取引で、元本は費用にしない。"
+        },
+        {
+          "id": "c4",
+          "text": "必ず給料にする。"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "元本の返済と、借入れに係る利息の費用を分けます。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day02-q08",
+      "sectionId": "boki26-day02-s2",
+      "category": "簿記の土台",
+      "prompt": "掛けで売り、まだ入金されていない商品の売上はどう捉えますか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "入金までどの帳簿にも一切記録しない。"
+        },
+        {
+          "id": "c2",
+          "text": "必ず借入金にする。"
+        },
+        {
+          "id": "c3",
+          "text": "売掛金は費用なので資産から除く。"
+        },
+        {
+          "id": "c4",
+          "text": "設例の販売が成立した期間の収益と、売掛金を記録する。"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "収益の発生と代金回収の時点を区別します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "debit",
+    "term": "借方",
+    "description": "仕訳の左側。資産・費用の増加、負債・純資産・収益の減少を記す側です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "credit",
+    "term": "貸方",
+    "description": "仕訳の右側。負債・純資産・収益の増加、資産・費用の減少を記す側です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "journal",
+    "term": "仕訳",
+    "description": "取引を勘定科目と借方・貸方、金額に分ける記録です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "posting",
+    "term": "転記",
+    "description": "仕訳帳の記録を、その科目の総勘定元帳の同じ側へ写すことです。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "ledger",
+    "term": "総勘定元帳",
+    "description": "科目ごとに取引を集め、増減と残高を追う主要簿です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "voucher",
+    "term": "証憑（しょうひょう）",
+    "description": "取引を確かめる領収書や請求書などの証拠書類です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "trial",
+    "term": "残高試算表",
+    "description": "各勘定の借方残高・貸方残高を一覧にし、合計を照合する表です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "balance-sheet",
+    "term": "貸借対照表",
+    "description": "ある日現在の資産・負債・純資産を示す表です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "income-statement",
+    "term": "損益計算書",
+    "description": "ある期間の収益・費用と、その差額の利益または損失を示す表です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "matching",
+    "term": "決算整理",
+    "description": "商品や消耗品の残り、費用・収益の期間などを期末にそろえる処理です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "depreciation-term",
+    "term": "減価償却",
+    "description": "長期間使う固定資産の原価を、使う期間へ規則的に費用配分することです。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "book-value",
+    "term": "帳簿価額",
+    "description": "帳簿に残る価額。備品の設例では、取得原価から減価償却累計額を引いた額です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "three-account",
+    "term": "三分法",
+    "description": "商品の売買を、仕入・売上・繰越商品の3科目を使って記録する方法です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "cost-sales",
+    "term": "売上原価",
+    "description": "当期に売った商品の原価。三分法の設例では期首商品＋当期仕入−期末商品で計算します。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "equity",
+    "term": "純資産",
+    "description": "資産から負債を差し引いた部分です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "profit",
+    "term": "利益",
+    "description": "その期間の収益から費用を差し引いた額です。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  },
+  {
+    "id": "worksheet",
+    "term": "精算表",
+    "description": "試算表、修正記入、損益計算書、貸借対照表をつないで整理する表です。本版は流れの理解を優先し、8桁精算表の完成入力は収録していません。",
+    "referenceIds": [
+      "jcci-scope-2026",
+      "fsa-basic"
+    ]
+  }
+]

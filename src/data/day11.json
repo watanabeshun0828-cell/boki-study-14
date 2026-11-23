@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day11",
+  "day": 11,
+  "title": "決算整理で当期を区切る",
+  "category": "決算整理",
+  "goals": [
+    "残ったものを資産へ移し、当期費用をそろえる。",
+    "対象期間と、既にある残高を確認して整理する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day11-s1",
+      "title": "商品と消耗品の残り",
+      "paragraphs": [
+        "三分法の売上原価は、期首商品＋当期仕入−期末商品です。決算では翌期へ残る商品を繰越商品へ記します。消耗品を購入時に全額費用とした設例では、未使用分を貯蔵品へ振り替え、当期に使った分だけ費用へ残します。"
+      ],
+      "keyPoint": "売上原価＝期首商品＋当期仕入−期末商品。使わず残るものと、当期に費用となるものを分けます。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day11-s2",
+      "title": "期間と回収の見積り",
+      "paragraphs": [
+        "翌期分の支払済み費用は前払費用、当期の未払分は未払費用にします。回収できない見込額には貸倒引当金を設定します。差額補充法では必要な引当金の額から既存残高を引いて、追加する額を計算します。"
+      ],
+      "keyPoint": "前払・未払は対象期間を確認します。引当金の差額補充は、必要額から既存残高を引いて追加します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day11-q01",
+      "sectionId": "boki26-day11-s1",
+      "category": "決算整理",
+      "prompt": "期首商品0円、期末の商品原価25,000円。三分法で、期末商品を繰越商品へ記録しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "inventory",
+          "amount": 25000
+        },
+        {
+          "side": "credit",
+          "accountId": "purchase",
+          "amount": 25000
+        }
+      ],
+      "explanation": "仕入から翌期へ残す商品の原価を差し引き、資産へ移します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計25,000−貸方合計25,000＝0",
+          "operator": "difference",
+          "operands": [
+            25000,
+            25000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q02",
+      "sectionId": "boki26-day11-s2",
+      "category": "決算整理",
+      "prompt": "保険料24,000円を全額費用で記録済み。12か月契約のうち翌期分は9か月。月割、端数なしで決算整理しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "prepaidInsurance",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "insurance",
+          "amount": 18000
+        }
+      ],
+      "explanation": "24,000×9/12＝18,000円を翌期へ繰り延べます。",
+      "calculations": [
+        {
+          "expression": "24,000×9÷12＝18,000",
+          "operator": "quotient",
+          "operands": [
+            216000,
+            12
+          ],
+          "result": 18000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計18,000−貸方合計18,000＝0",
+          "operator": "difference",
+          "operands": [
+            18000,
+            18000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q03",
+      "sectionId": "boki26-day11-s2",
+      "category": "決算整理",
+      "prompt": "当期の水道光熱費2,000円が未払い、未記帳だった。未払費用として決算整理しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "utilities",
+          "amount": 2000
+        },
+        {
+          "side": "credit",
+          "accountId": "accruedExpense",
+          "amount": 2000
+        }
+      ],
+      "explanation": "当期に発生した費用を計上し、支払義務を残します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計2,000−貸方合計2,000＝0",
+          "operator": "difference",
+          "operands": [
+            2000,
+            2000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q04",
+      "sectionId": "boki26-day11-s2",
+      "category": "決算整理",
+      "prompt": "売掛金60,000円に2％の貸倒引当金を設定する。整理前残高は500円、差額補充法。仕訳しましょう。率は練習用の仮定、端数なし。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "badDebtExpense",
+          "amount": 700
+        },
+        {
+          "side": "credit",
+          "accountId": "allowance",
+          "amount": 700
+        }
+      ],
+      "explanation": "必要額1,200円から既存500円を引いた700円を追加します。",
+      "calculations": [
+        {
+          "expression": "60,000×2％＝1,200",
+          "operator": "product",
+          "operands": [
+            60000,
+            0.02
+          ],
+          "result": 1200,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "1,200−500＝700",
+          "operator": "difference",
+          "operands": [
+            1200,
+            500
+          ],
+          "result": 700,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計700−貸方合計700＝0",
+          "operator": "difference",
+          "operands": [
+            700,
+            700
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q05",
+      "sectionId": "boki26-day11-s1",
+      "category": "決算整理",
+      "prompt": "期首商品10,000円、当期仕入80,000円、期末商品18,000円。売上原価を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "当期に販売した分の原価になるよう、期末の残りを除きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "売上原価",
+          "expected": 72000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "10,000＋80,000−18,000＝72,000",
+          "operator": "difference",
+          "operands": [
+            90000,
+            18000
+          ],
+          "result": 72000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q06",
+      "sectionId": "boki26-day11-s1",
+      "category": "決算整理",
+      "prompt": "消耗品費9,000円を記録済み。未使用分3,000円を貯蔵品へ振り替える。整理後の消耗品費を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "使っていない分を費用から除きます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "整理後消耗品費",
+          "expected": 6000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "9,000−3,000＝6,000",
+          "operator": "difference",
+          "operands": [
+            9000,
+            3000
+          ],
+          "result": 6000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day11-q07",
+      "sectionId": "boki26-day11-s2",
+      "category": "決算整理",
+      "prompt": "前払保険料に振り替えた額は、この設例でどこへ残りますか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "貸借対照表の資産"
+        },
+        {
+          "id": "c2",
+          "text": "当期の売上だけ"
+        },
+        {
+          "id": "c3",
+          "text": "当期の借入金だけ"
+        },
+        {
+          "id": "c4",
+          "text": "すべて消去してどこにも残さない。"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "翌期にサービスを受けるための支払済み額として資産へ残します。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day11-q08",
+      "sectionId": "boki26-day11-s2",
+      "category": "決算整理",
+      "prompt": "貸倒引当金の差額補充法で確認するものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "売上額だけ"
+        },
+        {
+          "id": "c2",
+          "text": "必要な期末額と、整理前の引当金残高"
+        },
+        {
+          "id": "c3",
+          "text": "現金の保管場所だけ"
+        },
+        {
+          "id": "c4",
+          "text": "会社名の文字数だけ"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "必要額を既存の残高に上乗せするのではなく、差額を計上します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

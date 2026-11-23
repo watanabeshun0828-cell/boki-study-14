@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day12",
+  "day": 12,
+  "title": "決算整理から財務諸表へ",
+  "category": "財務諸表",
+  "goals": [
+    "整理後の残高を、財務諸表の分類へ移す。",
+    "利益の締切りと純資産の増減を結び付ける。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day12-s1",
+      "title": "費用と資産を混ぜない",
+      "paragraphs": [
+        "決算整理後残高試算表から、資産・負債・純資産を貸借対照表へ、収益・費用を損益計算書へまとめます。減価償却累計額や貸倒引当金は、本教材の表示では対応する資産から控除します。"
+      ],
+      "keyPoint": "整理後の残高を、資産・負債・純資産と、収益・費用に分類して財務諸表へ移します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day12-s2",
+      "title": "利益を翌期へ残す",
+      "paragraphs": [
+        "収益と費用を損益勘定へ振り替え、純利益を繰越利益剰余金へ振り替えます。純損失の場合は逆側です。総合設例では増資・配当がないため、当期利益と純資産の増加が一致するかを確認できます。"
+      ],
+      "keyPoint": "収益・費用を損益へ集め、利益または損失を繰越利益剰余金へ振り替えます。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day12-q01",
+      "sectionId": "boki26-day12-s2",
+      "category": "財務諸表",
+      "prompt": "売上勘定の貸方残高40,000円を、決算の締切りで損益勘定へ振り替えましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "sales",
+          "amount": 40000
+        },
+        {
+          "side": "credit",
+          "accountId": "incomeSummary",
+          "amount": 40000
+        }
+      ],
+      "explanation": "売上を借方で消し、損益の貸方へ移します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計40,000−貸方合計40,000＝0",
+          "operator": "difference",
+          "operands": [
+            40000,
+            40000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q02",
+      "sectionId": "boki26-day12-s2",
+      "category": "財務諸表",
+      "prompt": "支払家賃勘定の借方残高8,000円を、損益勘定へ振り替えましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "incomeSummary",
+          "amount": 8000
+        },
+        {
+          "side": "credit",
+          "accountId": "rent",
+          "amount": 8000
+        }
+      ],
+      "explanation": "費用を貸方で消し、損益の借方へ集めます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計8,000−貸方合計8,000＝0",
+          "operator": "difference",
+          "operands": [
+            8000,
+            8000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q03",
+      "sectionId": "boki26-day12-s2",
+      "category": "財務諸表",
+      "prompt": "収益と費用を集計した損益勘定に、貸方残高12,000円の利益がある。繰越利益剰余金へ振り替えましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "incomeSummary",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "retained",
+          "amount": 12000
+        }
+      ],
+      "explanation": "利益を損益の借方から純資産の貸方へ振り替えます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計12,000−貸方合計12,000＝0",
+          "operator": "difference",
+          "operands": [
+            12000,
+            12000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q04",
+      "sectionId": "boki26-day12-s2",
+      "category": "財務諸表",
+      "prompt": "損益勘定に借方残高4,000円の損失がある。繰越利益剰余金へ振り替えましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "retained",
+          "amount": 4000
+        },
+        {
+          "side": "credit",
+          "accountId": "incomeSummary",
+          "amount": 4000
+        }
+      ],
+      "explanation": "損失は繰越利益剰余金を借方で減らし、損益を貸方で締め切ります。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計4,000−貸方合計4,000＝0",
+          "operator": "difference",
+          "operands": [
+            4000,
+            4000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q05",
+      "sectionId": "boki26-day12-s1",
+      "category": "財務諸表",
+      "prompt": "架空店舗の総合設例で、整理後の収益190,000円、費用132,700円。利益と、資本金300,000円だけから始めた期末純資産を求めましょう。増資・配当なし。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "図解画面の決算書と同じ金額です。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "当期利益",
+          "expected": 57300,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "期末純資産",
+          "expected": 357300,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "190,000−132,700＝57,300",
+          "operator": "difference",
+          "operands": [
+            190000,
+            132700
+          ],
+          "result": 57300,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "300,000＋57,300＝357,300",
+          "operator": "sum",
+          "operands": [
+            300000,
+            57300
+          ],
+          "result": 357300,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q06",
+      "sectionId": "boki26-day12-s1",
+      "category": "財務諸表",
+      "prompt": "総合設例の整理後純額資産399,300円、負債42,000円。純資産を求め、貸借を確かめましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "42,000＋357,300＝399,300円となり、左右が一致します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "純資産",
+          "expected": 357300,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "399,300−42,000＝357,300",
+          "operator": "difference",
+          "operands": [
+            399300,
+            42000
+          ],
+          "result": 357300,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day12-q07",
+      "sectionId": "boki26-day12-s1",
+      "category": "財務諸表",
+      "prompt": "備品減価償却累計額の、この教材での貸借対照表表示はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "必ず収益へ足す。"
+        },
+        {
+          "id": "c2",
+          "text": "負債の借入金へ混ぜる。"
+        },
+        {
+          "id": "c3",
+          "text": "備品の取得原価から差し引く。"
+        },
+        {
+          "id": "c4",
+          "text": "すべて現金として表示する。"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "累計額を控除して備品の帳簿価額を示します。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day12-q08",
+      "sectionId": "boki26-day12-s2",
+      "category": "財務諸表",
+      "prompt": "当期利益と純資産の増加が一致するため、本設例で置いている条件はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "借入金をすべて売上とする。"
+        },
+        {
+          "id": "c2",
+          "text": "現金しか資産がない。"
+        },
+        {
+          "id": "c3",
+          "text": "費用が一切ない。"
+        },
+        {
+          "id": "c4",
+          "text": "設立後の増資・配当などがない。"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "利益以外の持分変動がない条件で一致を確認します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

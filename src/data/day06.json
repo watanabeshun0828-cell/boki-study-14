@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day06",
+  "day": 6,
+  "title": "債権債務と証憑の照合",
+  "category": "債権債務",
+  "goals": [
+    "売掛金・買掛金と、商品以外の未収・未払を区別する。",
+    "権利や義務の形の変化と、売上の発生を分ける。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day06-s1",
+      "title": "商品以外の代金",
+      "paragraphs": [
+        "商品の掛け売買と、それ以外の取引を分けます。備品を売って代金を後で受け取るときは未収入金、備品を買って後で支払うときは未払金を使います。商品が渡る前の手付金には前払金・前受金を使います。"
+      ],
+      "keyPoint": "商品の掛代金は売掛金・買掛金。備品などの商品以外の未決済代金と区別します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day06-s2",
+      "title": "手形・電子記録と回収管理",
+      "paragraphs": [
+        "2026年度の範囲には受取手形・支払手形、電子記録債権・電子記録債務も含まれます。売掛金を別の回収の形へ振り替える取引では、売上を増やしません。相手先別の残高と、請求書・入金の記録を照合し、違いの理由を確かめます。"
+      ],
+      "keyPoint": "売掛金を受取手形へ振り替えても、新しい売上は生じません。相手先と金額を照合します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day06-q01",
+      "sectionId": "boki26-day06-s1",
+      "category": "債権債務",
+      "prompt": "備品32,000円を購入し、代金は翌月支払う。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "equipment",
+          "amount": 32000
+        },
+        {
+          "side": "credit",
+          "accountId": "otherPayable",
+          "amount": 32000
+        }
+      ],
+      "explanation": "商品仕入れ以外の未払いなので未払金を使います。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計32,000−貸方合計32,000＝0",
+          "operator": "difference",
+          "operands": [
+            32000,
+            32000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q02",
+      "sectionId": "boki26-day06-s1",
+      "category": "債権債務",
+      "prompt": "商品の注文時に手付金5,000円を現金で支払った。まだ商品は受け取っていない。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "advancePaid",
+          "amount": 5000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 5000
+        }
+      ],
+      "explanation": "商品の受取り前なので前払金です。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計5,000−貸方合計5,000＝0",
+          "operator": "difference",
+          "operands": [
+            5000,
+            5000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q03",
+      "sectionId": "boki26-day06-s1",
+      "category": "債権債務",
+      "prompt": "注文した商品25,000円を受け取り、既払の前払金5,000円を充当し、残額は掛けとした。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 25000
+        },
+        {
+          "side": "credit",
+          "accountId": "advancePaid",
+          "amount": 5000
+        },
+        {
+          "side": "credit",
+          "accountId": "payable",
+          "amount": 20000
+        }
+      ],
+      "explanation": "受領時に仕入を記録し、手付金の消滅と残りの買掛金を記します。",
+      "calculations": [
+        {
+          "expression": "5000 + 20000 = 25000",
+          "operator": "sum",
+          "operands": [
+            5000,
+            20000
+          ],
+          "result": 25000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計25,000−貸方合計25,000＝0",
+          "operator": "difference",
+          "operands": [
+            25000,
+            25000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q04",
+      "sectionId": "boki26-day06-s2",
+      "category": "債権債務",
+      "prompt": "売掛金12,000円について、取引先振出しの約束手形を受け取った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "noteReceivable",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 12000
+        }
+      ],
+      "explanation": "売掛金から受取手形へ回収の形を変えます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計12,000−貸方合計12,000＝0",
+          "operator": "difference",
+          "operands": [
+            12000,
+            12000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q05",
+      "sectionId": "boki26-day06-s2",
+      "category": "債権債務",
+      "prompt": "買掛金18,000円について、電子記録債務の発生記録を行った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "ePayable",
+          "amount": 18000
+        }
+      ],
+      "explanation": "買掛金を電子記録債務へ振り替えます。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計18,000−貸方合計18,000＝0",
+          "operator": "difference",
+          "operands": [
+            18000,
+            18000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q06",
+      "sectionId": "boki26-day06-s2",
+      "category": "債権債務",
+      "prompt": "得意先Aの売掛金は、前月繰越8,000円、今月の掛売上20,000円、今月入金15,000円。期末残高を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "相手先別の発生と回収を照合します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "得意先A残高",
+          "expected": 13000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "8,000＋20,000−15,000＝13,000",
+          "operator": "difference",
+          "operands": [
+            28000,
+            15000
+          ],
+          "result": 13000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day06-q07",
+      "sectionId": "boki26-day06-s1",
+      "category": "債権債務",
+      "prompt": "備品の購入代金を後払いにする場合、本問で使う負債科目はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "買掛金"
+        },
+        {
+          "id": "c2",
+          "text": "売掛金"
+        },
+        {
+          "id": "c3",
+          "text": "未払金"
+        },
+        {
+          "id": "c4",
+          "text": "売上"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "商品の仕入れで使う買掛金と分けます。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day06-q08",
+      "sectionId": "boki26-day06-s2",
+      "category": "債権債務",
+      "prompt": "請求書の残高と帳簿が違うとき、まず行うことはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "差額を無条件に売上にする。"
+        },
+        {
+          "id": "c2",
+          "text": "請求書を捨てる。"
+        },
+        {
+          "id": "c3",
+          "text": "帳簿を理由なく一括で上書きする。"
+        },
+        {
+          "id": "c4",
+          "text": "相手先・金額・日付と入金や返品の記録を照合する。"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "処理時点のずれや記帳漏れなど、差額の理由を確認します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

@@ -1,0 +1,612 @@
+[
+  {
+    "id": "cash",
+    "name": "現金",
+    "type": "asset",
+    "description": "手元の通貨など。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "pettyCash",
+    "name": "小口現金",
+    "type": "asset",
+    "description": "少額の支払い用に担当者へ渡した現金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "bank",
+    "name": "普通預金",
+    "type": "asset",
+    "description": "普通預金口座の残高。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "checking",
+    "name": "当座預金",
+    "type": "asset",
+    "description": "当座預金口座の残高。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "receivable",
+    "name": "売掛金",
+    "type": "asset",
+    "description": "商品を売り、後で受け取る代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "cardReceivable",
+    "name": "クレジット売掛金",
+    "type": "asset",
+    "description": "カード会社などから後で受け取る代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "noteReceivable",
+    "name": "受取手形",
+    "type": "asset",
+    "description": "手形によって受け取る権利。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "eReceivable",
+    "name": "電子記録債権",
+    "type": "asset",
+    "description": "電子記録による受取の権利。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "inventory",
+    "name": "繰越商品",
+    "type": "asset",
+    "description": "決算後へ繰り越す商品の原価。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "advancePaid",
+    "name": "前払金",
+    "type": "asset",
+    "description": "商品の受取り前に支払った代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "otherReceivable",
+    "name": "未収入金",
+    "type": "asset",
+    "description": "商品売買以外で後で受け取る代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "loanReceivable",
+    "name": "貸付金",
+    "type": "asset",
+    "description": "貸したお金を返してもらう権利。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "employeeAdvance",
+    "name": "立替金",
+    "type": "asset",
+    "description": "他の人が負担する金額を一時的に支払ったもの。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "suspensePaid",
+    "name": "仮払金",
+    "type": "asset",
+    "description": "使途や金額が未確定の支払い。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "prepaidInsurance",
+    "name": "前払保険料",
+    "type": "asset",
+    "description": "翌期分として繰り延べる保険料。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "prepaidRent",
+    "name": "前払家賃",
+    "type": "asset",
+    "description": "翌期分として繰り延べる家賃。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "accruedIncome",
+    "name": "未収利息",
+    "type": "asset",
+    "description": "当期分でまだ受け取っていない利息。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "suppliesAsset",
+    "name": "貯蔵品",
+    "type": "asset",
+    "description": "決算時に残る未使用の消耗品など。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "equipment",
+    "name": "備品",
+    "type": "asset",
+    "description": "事務机など長期に使う資産。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "equipmentAccum",
+    "name": "備品減価償却累計額",
+    "type": "contraAsset",
+    "description": "備品から差し引く、これまでの減価償却の合計。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "allowance",
+    "name": "貸倒引当金",
+    "type": "contraAsset",
+    "description": "回収できない見込額として債権から控除する額。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "inputTax",
+    "name": "仮払消費税",
+    "type": "asset",
+    "description": "税抜方式の仕入等に係る消費税。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "prepaidTax",
+    "name": "仮払法人税等",
+    "type": "asset",
+    "description": "法人税等の中間納付額など。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "payable",
+    "name": "買掛金",
+    "type": "liability",
+    "description": "商品を仕入れ、後で支払う代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "otherPayable",
+    "name": "未払金",
+    "type": "liability",
+    "description": "商品仕入れ以外で後で支払う代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "notePayable",
+    "name": "支払手形",
+    "type": "liability",
+    "description": "手形によって支払う義務。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "ePayable",
+    "name": "電子記録債務",
+    "type": "liability",
+    "description": "電子記録による支払いの義務。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "loanPayable",
+    "name": "借入金",
+    "type": "liability",
+    "description": "借りたお金を返す義務。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "advanceReceived",
+    "name": "前受金",
+    "type": "liability",
+    "description": "商品を渡す前に受け取った代金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "withholding",
+    "name": "預り金",
+    "type": "liability",
+    "description": "他の人へ渡すまで一時的に預かった額。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "suspenseReceived",
+    "name": "仮受金",
+    "type": "liability",
+    "description": "理由が未確定の入金。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "accruedExpense",
+    "name": "未払費用",
+    "type": "liability",
+    "description": "当期に発生したが未払いの費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "deferredRent",
+    "name": "前受家賃",
+    "type": "liability",
+    "description": "翌期分として繰り延べる家賃収入。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "outputTax",
+    "name": "仮受消費税",
+    "type": "liability",
+    "description": "税抜方式の売上等に係る消費税。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "taxPayable",
+    "name": "未払法人税等",
+    "type": "liability",
+    "description": "決算で確定した未払いの法人税等。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "capital",
+    "name": "資本金",
+    "type": "equity",
+    "description": "株主から会社へ払い込まれた資本。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "retained",
+    "name": "繰越利益剰余金",
+    "type": "equity",
+    "description": "利益などを翌期へ持ち越す科目。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "sales",
+    "name": "売上",
+    "type": "revenue",
+    "description": "商品の販売による収益。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "interestIncome",
+    "name": "受取利息",
+    "type": "revenue",
+    "description": "預金や貸付けなどによる利息収益。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "rentIncome",
+    "name": "受取家賃",
+    "type": "revenue",
+    "description": "建物等を貸したことによる収益。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "miscIncome",
+    "name": "雑益",
+    "type": "revenue",
+    "description": "他の収益科目に当てはまらない利益。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "disposalGain",
+    "name": "固定資産売却益",
+    "type": "revenue",
+    "description": "固定資産を帳簿価額より高く売った差額。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "purchase",
+    "name": "仕入",
+    "type": "expense",
+    "description": "三分法で記録する商品の仕入れ。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "rent",
+    "name": "支払家賃",
+    "type": "expense",
+    "description": "当期分の家賃。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "insurance",
+    "name": "保険料",
+    "type": "expense",
+    "description": "当期分の保険料。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "supplies",
+    "name": "消耗品費",
+    "type": "expense",
+    "description": "事務用消耗品などの費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "utilities",
+    "name": "水道光熱費",
+    "type": "expense",
+    "description": "電気・水道などの費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "communication",
+    "name": "通信費",
+    "type": "expense",
+    "description": "郵便や通信の費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "travel",
+    "name": "旅費交通費",
+    "type": "expense",
+    "description": "出張や業務移動の費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "wages",
+    "name": "給料",
+    "type": "expense",
+    "description": "従業員への給料。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "fees",
+    "name": "支払手数料",
+    "type": "expense",
+    "description": "振込や決済などの手数料。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "interestExpense",
+    "name": "支払利息",
+    "type": "expense",
+    "description": "借入れなどに係る利息費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "taxExpense",
+    "name": "租税公課",
+    "type": "expense",
+    "description": "固定資産税などの費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "corporateTax",
+    "name": "法人税等",
+    "type": "expense",
+    "description": "この演習で確定した法人税等の額。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "depreciation",
+    "name": "減価償却費",
+    "type": "expense",
+    "description": "固定資産の原価を当期に配分した費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "badDebtExpense",
+    "name": "貸倒引当金繰入",
+    "type": "expense",
+    "description": "貸倒引当金を追加設定する費用。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "badDebtLoss",
+    "name": "貸倒損失",
+    "type": "expense",
+    "description": "回収できなくなった債権の損失。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "miscExpense",
+    "name": "雑損",
+    "type": "expense",
+    "description": "他の費用科目に当てはまらない損失。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "disposalLoss",
+    "name": "固定資産売却損",
+    "type": "expense",
+    "description": "固定資産を帳簿価額より安く売った差額。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "cashOverShort",
+    "name": "現金過不足",
+    "type": "clearing",
+    "description": "現金の差額について、原因が分かるまで使う科目。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  },
+  {
+    "id": "incomeSummary",
+    "name": "損益",
+    "type": "clearing",
+    "description": "収益・費用の締切りで損益を集計する科目。",
+    "referenceIds": [
+      "jcci-accounts-2022",
+      "jcci-scope-2026"
+    ]
+  }
+]

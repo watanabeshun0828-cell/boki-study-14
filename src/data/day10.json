@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day10",
+  "day": 10,
+  "title": "試算表で誤りを探す",
+  "category": "試算表",
+  "goals": [
+    "元帳残高を試算表の正しい側へ集める。",
+    "試算表の一致と内容の正しさを区別する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day10-s1",
+      "title": "残高を一つの表へ",
+      "paragraphs": [
+        "残高試算表は、元帳に残った借方残高と貸方残高を科目別に並べます。借方と貸方の合計が一致するかを確かめます。合計試算表は各科目の借方・貸方の合計を示すもので、残高だけの表と区別します。"
+      ],
+      "keyPoint": "試算表の貸借一致は、正しさを確認する一つの手掛かりです。取引全体の記帳漏れは見逃すことがあります。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day10-s2",
+      "title": "一致しても残る誤り",
+      "paragraphs": [
+        "片側だけの記入や金額の違いは貸借差額で気付けることがあります。一方、同額を別の科目へ記す、取引を丸ごと二重計上するなどの誤りでは合計が一致する場合があります。証憑、仕訳帳、元帳へ戻って照合します。"
+      ],
+      "keyPoint": "訂正は、誤った記録と正しい記録の差を考えます。科目違い・金額不足・二重記帳を区別します。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day10-q01",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "現金で払った通信費1,200円を、消耗品費として正しく貸借は合うように記録していた。現金は修正せず、科目だけを直す仕訳をしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "communication",
+          "amount": 1200
+        },
+        {
+          "side": "credit",
+          "accountId": "supplies",
+          "amount": 1200
+        }
+      ],
+      "explanation": "誤って増やした消耗品費を減らし、通信費を増やします。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計1,200−貸方合計1,200＝0",
+          "operator": "difference",
+          "operands": [
+            1200,
+            1200
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q02",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "掛売上8,000円を丸ごと二重記録していた。余分な1件を取り消す仕訳をしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "sales",
+          "amount": 8000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 8000
+        }
+      ],
+      "explanation": "余分な売上と売掛金を逆仕訳で消します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計8,000−貸方合計8,000＝0",
+          "operator": "difference",
+          "operands": [
+            8000,
+            8000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q03",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "買掛金5,000円の現金払いを、借方・貸方とも500円で記録していた。不足分だけ追加する仕訳をしましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 4500
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 4500
+        }
+      ],
+      "explanation": "5,000−500＝4,500円を両側へ追加します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計4,500−貸方合計4,500＝0",
+          "operator": "difference",
+          "operands": [
+            4500,
+            4500
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q04",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "普通預金への売掛金7,000円の入金を未記帳だった。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 7000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 7000
+        }
+      ],
+      "explanation": "取引全体の漏れは貸借一致だけでは分からないので、通帳等と照合します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計7,000−貸方合計7,000＝0",
+          "operator": "difference",
+          "operands": [
+            7000,
+            7000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q05",
+      "sectionId": "boki26-day10-s1",
+      "category": "試算表",
+      "prompt": "現金12,000円、普通預金30,000円、備品20,000円が借方残高。買掛金18,000円、資本金44,000円が貸方残高。両側の合計を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "科目残高を正しい側へ並べて集計します。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "借方合計",
+          "expected": 62000,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "貸方合計",
+          "expected": 62000,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "12,000＋30,000＋20,000＝62,000",
+          "operator": "sum",
+          "operands": [
+            12000,
+            30000,
+            20000
+          ],
+          "result": 62000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "18,000＋44,000＝62,000",
+          "operator": "sum",
+          "operands": [
+            18000,
+            44000
+          ],
+          "result": 62000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q06",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "試算表の借方合計85,000円、貸方合計82,600円。貸借差額を正の値で求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "差額2,400円を手掛かりに、片側漏れや金額違い等を調べます。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "貸借差額",
+          "expected": 2400,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "85,000−82,600＝2,400",
+          "operator": "difference",
+          "operands": [
+            85000,
+            82600
+          ],
+          "result": 2400,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day10-q07",
+      "sectionId": "boki26-day10-s2",
+      "category": "試算表",
+      "prompt": "試算表が一致していても起こり得る誤りはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "片側だけ1,000円を余計に記入した誤りだけ"
+        },
+        {
+          "id": "c2",
+          "text": "借方合計が貸方より1,000円多い状態そのもの"
+        },
+        {
+          "id": "c3",
+          "text": "取引全体の記入漏れ"
+        },
+        {
+          "id": "c4",
+          "text": "片側だけのゼロ入力しかない状態"
+        }
+      ],
+      "correctChoiceId": "c3",
+      "explanation": "借方・貸方とも漏れていれば合計は一致し得ます。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day10-q08",
+      "sectionId": "boki26-day10-s1",
+      "category": "試算表",
+      "prompt": "残高試算表で資産の通常の借方残高を記す欄はどちらですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "貸方残高欄"
+        },
+        {
+          "id": "c2",
+          "text": "表外にだけ記す。"
+        },
+        {
+          "id": "c3",
+          "text": "必ず純資産へ移す。"
+        },
+        {
+          "id": "c4",
+          "text": "借方残高欄"
+        }
+      ],
+      "correctChoiceId": "c4",
+      "explanation": "科目の借方と貸方の差額が借方残高なら、借方側へ並べます。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

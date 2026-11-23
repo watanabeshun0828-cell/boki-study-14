@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day05",
+  "day": 5,
+  "title": "商品の売買と掛け取引",
+  "category": "商品売買",
+  "goals": [
+    "売価と原価、仕入と売上を区別する。",
+    "取引の発生と後日の決済を二重に売上・仕入へ記録しない。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day05-s1",
+      "title": "三分法で記す",
+      "paragraphs": [
+        "この教材では商品売買を仕入・売上・繰越商品に分ける三分法を使います。期中の仕入れは仕入、販売は売上で記録し、期末の商品の残りは決算整理で扱います。売ったときの売上額と、仕入れた原価は区別します。"
+      ],
+      "keyPoint": "三分法では、期中の仕入れは「仕入」、販売は「売上」。販売時の売価と商品の原価は別です。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day05-s2",
+      "title": "売掛金・買掛金と証憑",
+      "paragraphs": [
+        "掛け売りでは売掛金、掛け仕入れでは買掛金を使います。後日の回収・支払いでそれらを減らします。請求書や領収書という証拠書類（証憑）で、相手先、取引内容、金額、回収・支払い済みかを照合します。"
+      ],
+      "keyPoint": "販売時の売上と、後日の売掛金回収は別の取引です。回収時に売上を重ねて記録しません。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day05-q01",
+      "sectionId": "boki26-day05-s1",
+      "category": "商品売買",
+      "prompt": "商品28,000円を掛けで仕入れた。三分法で仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 28000
+        },
+        {
+          "side": "credit",
+          "accountId": "payable",
+          "amount": 28000
+        }
+      ],
+      "explanation": "仕入と、後で支払う買掛金を記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計28,000−貸方合計28,000＝0",
+          "operator": "difference",
+          "operands": [
+            28000,
+            28000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day05-q02",
+      "sectionId": "boki26-day05-s2",
+      "category": "商品売買",
+      "prompt": "商品45,000円を掛けで販売した。三分法で仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "receivable",
+          "amount": 45000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 45000
+        }
+      ],
+      "explanation": "代金を受け取る権利と売上を記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計45,000−貸方合計45,000＝0",
+          "operator": "difference",
+          "operands": [
+            45000,
+            45000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ],
+      "document": {
+        "kind": "invoice",
+        "number": "K-0502",
+        "date": "2026-05-02",
+        "issuer": "練習会社こもれび文具",
+        "recipient": "架空の取引先A",
+        "description": "文具セットの掛け販売・税金は考慮しない",
+        "amount": 45000
+      }
+    },
+    {
+      "id": "boki26-day05-q03",
+      "sectionId": "boki26-day05-s2",
+      "category": "商品売買",
+      "prompt": "売掛金のうち18,000円が普通預金へ入金された。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 18000
+        }
+      ],
+      "explanation": "売上をもう一度計上せず、売掛金を減らします。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計18,000−貸方合計18,000＝0",
+          "operator": "difference",
+          "operands": [
+            18000,
+            18000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day05-q04",
+      "sectionId": "boki26-day05-s2",
+      "category": "商品売買",
+      "prompt": "買掛金22,000円を普通預金から支払った。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 22000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 22000
+        }
+      ],
+      "explanation": "既に記録した買掛金を減らします。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計22,000−貸方合計22,000＝0",
+          "operator": "difference",
+          "operands": [
+            22000,
+            22000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day05-q05",
+      "sectionId": "boki26-day05-s1",
+      "category": "商品売買",
+      "prompt": "掛け仕入れした商品3,000円を返品し、買掛金から差し引くことになった。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 3000
+        },
+        {
+          "side": "credit",
+          "accountId": "purchase",
+          "amount": 3000
+        }
+      ],
+      "explanation": "買掛金と仕入を、元の仕訳と逆側で減らします。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計3,000−貸方合計3,000＝0",
+          "operator": "difference",
+          "operands": [
+            3000,
+            3000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day05-q06",
+      "sectionId": "boki26-day05-s2",
+      "category": "商品売買",
+      "prompt": "売掛金の期首残高10,000円、掛売上45,000円、回収18,000円。他の増減はない。残高を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "発生と回収を分けて追います。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "売掛金残高",
+          "expected": 37000,
+          "unit": "円",
+          "calculationIndex": 0
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "10,000＋45,000−18,000＝37,000",
+          "operator": "difference",
+          "operands": [
+            55000,
+            18000
+          ],
+          "result": 37000,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day05-q07",
+      "sectionId": "boki26-day05-s2",
+      "category": "商品売買",
+      "prompt": "売掛金を回収するとき、通常もう一度増やさないものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "売上"
+        },
+        {
+          "id": "c2",
+          "text": "普通預金（入金された場合）"
+        },
+        {
+          "id": "c3",
+          "text": "現金（現金回収の場合）"
+        },
+        {
+          "id": "c4",
+          "text": "回収済みの管理記録"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "売上は販売時に記録しているため、回収で重ねて計上しません。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day05-q08",
+      "sectionId": "boki26-day05-s1",
+      "category": "商品売買",
+      "prompt": "三分法の期中の仕入れで使う科目はどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "売上"
+        },
+        {
+          "id": "c2",
+          "text": "仕入"
+        },
+        {
+          "id": "c3",
+          "text": "資本金"
+        },
+        {
+          "id": "c4",
+          "text": "受取利息"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "本教材の三分法では、期中の仕入れを仕入勘定へ記します。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

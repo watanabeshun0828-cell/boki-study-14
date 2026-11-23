@@ -1,0 +1,469 @@
+{
+  "id": "komorebi-2026",
+  "title": "株式会社こもれび文具の一年",
+  "initialEquity": 300000,
+  "referenceIds": [
+    "practice-assumptions",
+    "fsa-basic"
+  ],
+  "assumptions": [
+    "完全に架空の小さな文具店です。記載のない取引はありません。",
+    "2026年1月1日〜12月31日の1年間。三分法・期首商品0円。金額は整数円。",
+    "この総合設例では消費税と法人税等を考慮しません。Day7等の税金の単独設問とは別の前提です。",
+    "備品は1月から12か月供用。残存価額0円・耐用年数5年・定額法・間接法。",
+    "保険は10月1日から12か月分。月割で3か月を当期、9か月を翌期へ配分します。",
+    "貸倒引当金は売掛金残高の2％、整理前残高0円。この率は練習用の仮定です。",
+    "設立後の増資・配当はなく、当期利益がそのまま純資産の増加になります。すべての計算に端数は生じません。"
+  ],
+  "transactions": [
+    {
+      "id": "komorebi-t01",
+      "date": "2026-01-01",
+      "description": "設立時に資本金300,000円が普通預金へ払い込まれた。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 300000
+        },
+        {
+          "side": "credit",
+          "accountId": "capital",
+          "amount": 300000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t02",
+      "date": "2026-01-02",
+      "description": "普通預金から現金50,000円を引き出した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 50000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 50000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t03",
+      "date": "2026-01-03",
+      "description": "商品100,000円を掛けで仕入れた。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "purchase",
+          "amount": 100000
+        },
+        {
+          "side": "credit",
+          "accountId": "payable",
+          "amount": 100000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t04",
+      "date": "2026-01-04",
+      "description": "商品150,000円を掛けで販売した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "receivable",
+          "amount": 150000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 150000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t05",
+      "date": "2026-01-05",
+      "description": "売掛金90,000円を普通預金で回収した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "bank",
+          "amount": 90000
+        },
+        {
+          "side": "credit",
+          "accountId": "receivable",
+          "amount": 90000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t06",
+      "date": "2026-01-06",
+      "description": "買掛金60,000円を普通預金から支払った。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "payable",
+          "amount": 60000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 60000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t07",
+      "date": "2026-01-07",
+      "description": "当期の家賃18,000円を普通預金から支払った。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "rent",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 18000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t08",
+      "date": "2026-01-08",
+      "description": "備品60,000円を普通預金で購入し、1月から使用を始めた。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "equipment",
+          "amount": 60000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 60000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t09",
+      "date": "2026-10-01",
+      "description": "10月から翌年9月までの保険料24,000円を普通預金で支払い、全額を保険料へ記録した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "insurance",
+          "amount": 24000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 24000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t10",
+      "date": "2026-10-02",
+      "description": "消耗品9,000円を現金で購入し、全額を消耗品費へ記録した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "supplies",
+          "amount": 9000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 9000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t11",
+      "date": "2026-11-01",
+      "description": "水道光熱費12,000円を普通預金から支払った。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "utilities",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 12000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t12",
+      "date": "2026-11-02",
+      "description": "商品40,000円を現金で販売した。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 40000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 40000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-t13",
+      "date": "2026-11-03",
+      "description": "振込手数料500円を普通預金から支払った。",
+      "adjustment": false,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "fees",
+          "amount": 500
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 500
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a01",
+      "date": "2026-12-31",
+      "description": "期首商品0円、期末の商品原価25,000円。三分法で商品を繰り越す。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "inventory",
+          "amount": 25000
+        },
+        {
+          "side": "credit",
+          "accountId": "purchase",
+          "amount": 25000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a02",
+      "date": "2026-12-31",
+      "description": "備品60,000円を残存0円・耐用年数5年、定額法・間接法で12か月分償却する。端数なし。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "depreciation",
+          "amount": 12000
+        },
+        {
+          "side": "credit",
+          "accountId": "equipmentAccum",
+          "amount": 12000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a03",
+      "date": "2026-12-31",
+      "description": "年払いの保険料のうち翌年1〜9月分18,000円を前払いへ振り替える。端数なし。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "prepaidInsurance",
+          "amount": 18000
+        },
+        {
+          "side": "credit",
+          "accountId": "insurance",
+          "amount": 18000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a04",
+      "date": "2026-12-31",
+      "description": "未使用の消耗品3,000円を貯蔵品へ振り替える。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "suppliesAsset",
+          "amount": 3000
+        },
+        {
+          "side": "credit",
+          "accountId": "supplies",
+          "amount": 3000
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a05",
+      "date": "2026-12-31",
+      "description": "売掛金60,000円の2％、1,200円を貸倒引当金へ設定する。整理前残高0円・差額補充法。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "badDebtExpense",
+          "amount": 1200
+        },
+        {
+          "side": "credit",
+          "accountId": "allowance",
+          "amount": 1200
+        }
+      ]
+    },
+    {
+      "id": "komorebi-a06",
+      "date": "2026-12-31",
+      "description": "当期の水道光熱費2,000円が未払いで未記帳だった。未払費用へ記録する。",
+      "adjustment": true,
+      "referenceIds": [
+        "practice-assumptions",
+        "fsa-basic",
+        "jcci-scope-2026"
+      ],
+      "entries": [
+        {
+          "side": "debit",
+          "accountId": "utilities",
+          "amount": 2000
+        },
+        {
+          "side": "credit",
+          "accountId": "accruedExpense",
+          "amount": 2000
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "unadjustedDebit": 530000,
+    "unadjustedCredit": 530000,
+    "adjustedDebit": 545200,
+    "adjustedCredit": 545200,
+    "assets": 399300,
+    "liabilities": 42000,
+    "revenue": 190000,
+    "expenses": 132700,
+    "profit": 57300,
+    "endingEquity": 357300
+  }
+}

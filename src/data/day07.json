@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "id": "boki26-day07",
+  "day": 7,
+  "title": "経費・立替・預りと税金の入口",
+  "category": "経費と税金",
+  "goals": [
+    "負担者と精算の時点を確かめる。",
+    "設例で与えられた税額を、指定の方式で記録する。"
+  ],
+  "sections": [
+    {
+      "id": "boki26-day07-s1",
+      "title": "会社の費用か、一時的な預けか",
+      "paragraphs": [
+        "会社自身が負担する通信費などと、従業員が負担する金額の立替えを分けます。立替金は後で返してもらう資産、預り金は後で渡す負債です。使途が確定していない支払いは仮払金にし、報告が来たら精算します。"
+      ],
+      "keyPoint": "立替金は会社へ返してもらう権利、預り金は後で渡す義務です。会社自身の費用と分けます。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    },
+    {
+      "id": "boki26-day07-s2",
+      "title": "税金の記帳と相談を分ける",
+      "paragraphs": [
+        "固定資産税などは租税公課を使う例があります。税抜方式では、仕入等の消費税を仮払消費税、売上等の消費税を仮受消費税に分けます。本教材では税率や税額を設例で与えて記帳だけを練習し、実際の税額判断や申告書作成は行いません。"
+      ],
+      "keyPoint": "税抜方式の設例では、本体価格と消費税を分けます。税率・税額は問題で与えた条件を使います。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki26-day07-q01",
+      "sectionId": "boki26-day07-s1",
+      "category": "経費と税金",
+      "prompt": "従業員が負担する費用2,000円を会社の現金で立て替えた。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "employeeAdvance",
+          "amount": 2000
+        },
+        {
+          "side": "credit",
+          "accountId": "cash",
+          "amount": 2000
+        }
+      ],
+      "explanation": "会社自身の費用ではなく、従業員へ請求する立替金です。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計2,000−貸方合計2,000＝0",
+          "operator": "difference",
+          "operands": [
+            2000,
+            2000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q02",
+      "sectionId": "boki26-day07-s1",
+      "category": "経費と税金",
+      "prompt": "給料30,000円から源泉所得税として2,000円を預かり、残り28,000円を普通預金から支払った。税額は練習用の仮定。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "wages",
+          "amount": 30000
+        },
+        {
+          "side": "credit",
+          "accountId": "withholding",
+          "amount": 2000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 28000
+        }
+      ],
+      "explanation": "給料全額を費用にし、預かった額を負債に分けます。税額の算定は本問の対象ではありません。",
+      "calculations": [
+        {
+          "expression": "2000 + 28000 = 30000",
+          "operator": "sum",
+          "operands": [
+            2000,
+            28000
+          ],
+          "result": 30000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計30,000−貸方合計30,000＝0",
+          "operator": "difference",
+          "operands": [
+            30000,
+            30000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q03",
+      "sectionId": "boki26-day07-s1",
+      "category": "経費と税金",
+      "prompt": "出張旅費のため仮払金10,000円を渡していた。精算報告で旅費交通費8,000円、残額2,000円が現金で返された。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "travel",
+          "amount": 8000
+        },
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 2000
+        },
+        {
+          "side": "credit",
+          "accountId": "suspensePaid",
+          "amount": 10000
+        }
+      ],
+      "explanation": "使途が確定した費用と返金を記録し、仮払金を消します。",
+      "calculations": [
+        {
+          "expression": "8000 + 2000 = 10000",
+          "operator": "sum",
+          "operands": [
+            8000,
+            2000
+          ],
+          "result": 10000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計10,000−貸方合計10,000＝0",
+          "operator": "difference",
+          "operands": [
+            10000,
+            10000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q04",
+      "sectionId": "boki26-day07-s2",
+      "category": "経費と税金",
+      "prompt": "商品を税抜10,000円、消費税1,000円で現金販売した。税抜方式、税率10％、端数なしという仮定で仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。税抜方式、税率10％、税額は1,000円と指定。適格請求書や控除要件の判断は扱わず、端数は生じない。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "cash",
+          "amount": 11000
+        },
+        {
+          "side": "credit",
+          "accountId": "sales",
+          "amount": 10000
+        },
+        {
+          "side": "credit",
+          "accountId": "outputTax",
+          "amount": 1000
+        }
+      ],
+      "explanation": "売上本体と、預かった消費税を分けます。",
+      "calculations": [
+        {
+          "expression": "10000 + 1000 = 11000",
+          "operator": "sum",
+          "operands": [
+            10000,
+            1000
+          ],
+          "result": 11000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "10,000×10％＝1,000",
+          "operator": "product",
+          "operands": [
+            10000,
+            0.1
+          ],
+          "result": 1000,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "貸借差額：借方合計11,000−貸方合計11,000＝0",
+          "operator": "difference",
+          "operands": [
+            11000,
+            11000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q05",
+      "sectionId": "boki26-day07-s2",
+      "category": "経費と税金",
+      "prompt": "固定資産税の通知額6,000円を普通預金から支払った。通知額は練習用の仮定。仕訳しましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions",
+        "jcci-accounts-2022"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "journal",
+      "expected": [
+        {
+          "side": "debit",
+          "accountId": "taxExpense",
+          "amount": 6000
+        },
+        {
+          "side": "credit",
+          "accountId": "bank",
+          "amount": 6000
+        }
+      ],
+      "explanation": "設例の固定資産税を租税公課に記録します。",
+      "calculations": [
+        {
+          "expression": "貸借差額：借方合計6,000−貸方合計6,000＝0",
+          "operator": "difference",
+          "operands": [
+            6000,
+            6000
+          ],
+          "result": 0,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q06",
+      "sectionId": "boki26-day07-s2",
+      "category": "経費と税金",
+      "prompt": "税抜方式で商品18,000円を仕入れた。税率10％、税額の端数なし、全額現金払いとする仮定。仮払消費税と支払総額を求めましょう。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "numeric",
+      "explanation": "仮払消費税は仕入本体と分けます。この税率は設例の条件です。",
+      "fields": [
+        {
+          "id": "f1",
+          "label": "仮払消費税",
+          "expected": 1800,
+          "unit": "円",
+          "calculationIndex": 0
+        },
+        {
+          "id": "f2",
+          "label": "支払総額",
+          "expected": 19800,
+          "unit": "円",
+          "calculationIndex": 1
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "18,000×10％＝1,800",
+          "operator": "product",
+          "operands": [
+            18000,
+            0.1
+          ],
+          "result": 1800,
+          "unit": "円",
+          "rounding": "端数なし"
+        },
+        {
+          "expression": "18,000＋1,800＝19,800",
+          "operator": "sum",
+          "operands": [
+            18000,
+            1800
+          ],
+          "result": 19800,
+          "unit": "円",
+          "rounding": "端数なし"
+        }
+      ]
+    },
+    {
+      "id": "boki26-day07-q07",
+      "sectionId": "boki26-day07-s1",
+      "category": "経費と税金",
+      "prompt": "立替金の説明として正しいものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "他の人の負担を一時的に払い、後で返してもらう額"
+        },
+        {
+          "id": "c2",
+          "text": "会社の売上そのもの"
+        },
+        {
+          "id": "c3",
+          "text": "必ず返さなくてよい利益"
+        },
+        {
+          "id": "c4",
+          "text": "未払いの借入利息だけ"
+        }
+      ],
+      "correctChoiceId": "c1",
+      "explanation": "会社へ返してもらう権利なので資産です。",
+      "calculations": []
+    },
+    {
+      "id": "boki26-day07-q08",
+      "sectionId": "boki26-day07-s2",
+      "category": "経費と税金",
+      "prompt": "本教材で税率を与える理由として適切なものはどれですか。",
+      "referenceIds": [
+        "jcci-scope-2026",
+        "fsa-basic",
+        "practice-assumptions"
+      ],
+      "assumptions": "練習用の仮定。各問は独立した取引です。金額は整数円、消費税・法人税等は設問に指示がある場合だけ扱います。端数処理は計算式の欄に示します。",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "c1",
+          "text": "資格取得だけで他人の申告代行ができるため。"
+        },
+        {
+          "id": "c2",
+          "text": "指定条件で記帳と計算を練習するため。"
+        },
+        {
+          "id": "c3",
+          "text": "すべての実取引に同じ税率を保証するため。"
+        },
+        {
+          "id": "c4",
+          "text": "会社の税額を確定するため。"
+        }
+      ],
+      "correctChoiceId": "c2",
+      "explanation": "学習上の条件として使い、実際の税務判断や申告代行の権限を表すものではありません。",
+      "calculations": []
+    }
+  ],
+  "referenceIds": [
+    "jcci-scope-2026",
+    "fsa-basic"
+  ]
+}

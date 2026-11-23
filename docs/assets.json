@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-23",
+  "assets": [
+    {
+      "path": "public/guide-character.png",
+      "name": "副業のススメくん",
+      "source": "ユーザー提供PNG",
+      "originalFile": "codex-clipboard-0332cc1a-050e-4849-8128-4543e6bb7758.png",
+      "usage": "本アプリおよびユーザーが指定した既存アプリの案内役",
+      "sha256": "363cad73c58060f9f074371d367aa39444237fe7eed461de8e55433471375b9c",
+      "bytes": 1251064,
+      "alteration": "元PNGの複製。CSSで表示サイズを指定",
+      "independentRightsReview": "未実施"
+    }
+  ]
+}

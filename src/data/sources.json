@@ -1,0 +1,112 @@
+[
+  {
+    "id": "jcci-class3",
+    "title": "日商簿記3級の概要",
+    "url": "https://www.kentei.ne.jp/bookkeeping/class3",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2026年11月23日に掲載されていた3級の案内",
+    "location": "「簿記3級のレベル」",
+    "role": "出題範囲",
+    "notes": "教材の対象者を選ぶための参照。公式教材の文章・設問は使用していない。"
+  },
+  {
+    "id": "jcci-exam",
+    "title": "3級 試験科目・注意事項",
+    "url": "https://www.kentei.ne.jp/bookkeeping/class3/exam",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2026年度・各年度4月1日施行の法令等に準拠",
+    "location": "試験科目と準拠日",
+    "role": "出題範囲",
+    "notes": "試験形式と適用基準を確認。アプリの学習日数と試験の合格基準は別。"
+  },
+  {
+    "id": "jcci-scope-index",
+    "title": "出題区分表の適用年度案内",
+    "url": "https://www.kentei.ne.jp/bookkeeping/exam-list",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2026年度は2022年度版。2027年度確定版は2027年4月1日から",
+    "location": "（1）2027年度適用／（2）2022年度適用（2026年度も適用）",
+    "role": "出題範囲",
+    "notes": "閲覧時点の最新公表版と、このVer.1の対象年度を区別する。"
+  },
+  {
+    "id": "jcci-scope-2026",
+    "title": "商業簿記・会計学 出題区分表（2022年度版）",
+    "url": "https://www.kentei.ne.jp/wp/wp-content/uploads/2024/12/shogyouboki_kubun.pdf",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2022年4月1日施行・2026年度試験まで適用",
+    "location": "PDFの3級列・第一〜第四。1〜3ページを画像でも確認",
+    "role": "出題範囲",
+    "notes": "上級列を区別して項目を選定。金額・取引例はこの資料から採取していない。"
+  },
+  {
+    "id": "jcci-accounts-2022",
+    "title": "商業簿記標準・許容勘定科目表",
+    "url": "https://www.kentei.ne.jp/wp/wp-content/uploads/2021/12/2022_kamoku.pdf",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2022年4月1日施行・2026年度参照用",
+    "location": "3級の勘定科目・冒頭の注意事項",
+    "role": "事実の根拠",
+    "notes": "科目名の対応確認に使用。このアプリは設問に指定する標準科目から選択する。"
+  },
+  {
+    "id": "jcci-scope-2027",
+    "title": "2027年度適用 出題区分表 確定版",
+    "url": "https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027kubunhyo_fixed.pdf",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2027年度（2027年4月1日〜2028年3月31日）",
+    "location": "表題と適用年度。改訂の存在を確認",
+    "role": "出題範囲",
+    "notes": "将来版の案内用。Ver.1が2027年度版に全面対応するという表示には用いない。"
+  },
+  {
+    "id": "jcci-change-2027",
+    "title": "2027年度改定項目等の説明書",
+    "url": "https://www.kentei.ne.jp/wp/wp-content/uploads/2014/10/2027_kaitei_shushi_fixed.pdf",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2027年度適用の改訂説明",
+    "location": "表題・改訂趣旨",
+    "role": "出題範囲",
+    "notes": "将来の教材改訂で参照する資料。現行版の範囲を置換していない。"
+  },
+  {
+    "id": "fsa-basic",
+    "title": "中小企業の会計に関する基本要領（報告書所収）",
+    "url": "https://www.fsa.go.jp/news/23/sonota/20120201-1/01.pdf",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2012年2月1日公表の基本要領。最新改訂の有無は本作業では独立に確定していない",
+    "location": "本文3〜11頁の記帳・収益費用・資産負債・債権債務・棚卸・経過勘定・固定資産、19〜21頁の財務諸表様式。PDF上は11〜19、27〜29頁",
+    "role": "事実の根拠",
+    "notes": "会計の基本的な関係の確認に使用。上級論点や税務上の個別判断は教材に取り込んでいない。"
+  },
+  {
+    "id": "practice-assumptions",
+    "title": "BOKI STUDY 14 独自設例の前提",
+    "url": null,
+    "checkedAt": "2026-11-23",
+    "appliesTo": "Ver.1 教材 2026.1",
+    "location": "src/data/day*.json、scenario.json の assumptions・calculations・expected",
+    "role": "練習用の仮定",
+    "notes": "作成者はAIアシスタント。金額・社名・日付・証憑は本作業で作成した架空データ。外部資料に由来する取引例ではない。"
+  },
+  {
+    "id": "w3c-idb",
+    "title": "Indexed Database API 3.0",
+    "url": "https://www.w3.org/TR/IndexedDB/",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2026年10月30日 Working Draft（閲覧時点）",
+    "location": "トランザクション、バージョン更新、保存の考慮事項",
+    "role": "技術仕様",
+    "notes": "学習記録の端末内保存・形式移行の設計に参照。"
+  },
+  {
+    "id": "w3c-manifest",
+    "title": "Web Application Manifest",
+    "url": "https://www.w3.org/TR/appmanifest/",
+    "checkedAt": "2026-11-23",
+    "appliesTo": "2026年11月18日 Working Draft（閲覧時点）",
+    "location": "id、scope、start_url、display、icons",
+    "role": "技術仕様",
+    "notes": "PWAの起動・スコープ設定に参照。"
+  }
+]
